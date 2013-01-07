@@ -9,11 +9,8 @@ setup(
     author='Kamil Selwa',
     author_email='selwak@gmail.com',
     url='http://github.com/k1000/django-contento/tree/master',
-    packages=[
-        'contento',
-        'contento.templatetags',
-    ],
-    include_package_data=True,
+    packages = find_packages(exclude=['examples', 'tests']),
+    # include_package_data=True,
     zip_safe=False,
     classifiers=['Development Status :: 4 - Beta',
                  'Environment :: Web Environment',
