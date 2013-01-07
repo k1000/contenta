@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from django import forms
 
 from django.contrib.auth.models import User
 from django.contrib.sites.models import Site

@@ -14,9 +14,11 @@
           // Added by Roger Hu 02/27/2010
           CKEDITOR.config.filebrowserBrowseUrl = '/admin/filebrowser/browse?pop=3';
           django.jQuery("textarea").each(function(n, obj) {
-            CKEDITOR.replace(obj.id) ;
-            // fck.BasePath = "/static/fckeditor/" ;
-            //fck.ReplaceTextarea() ;
+            if (obj.id.match(/content/)) {
+              CKEDITOR.replace(obj.id) ;
+              // fck.BasePath = "/static/fckeditor/" ;
+              //fck.ReplaceTextarea() ;
+            }
           });
       }
   });

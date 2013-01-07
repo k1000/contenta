@@ -7,7 +7,8 @@
 			var h2 = tabbed.find("h2");
 			var title = h2.html().trim();
 			h2.remove();
-			var cls = tabbed.attr('class').split(" ")[2];
+			var index = ( grappelli === undefined )? 2 : 1;
+			var cls = tabbed.attr('class').split(" ")[index];
 			tabs[cls] = {title: title, ele: tabbed};
 			tab_ele += "<li class='"+ cls +"'><a href='#" +cls +"' >"+title+"</a></li>";
 			tabbed.hide();

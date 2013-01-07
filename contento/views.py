@@ -1,13 +1,16 @@
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect
-from django.template.loader import render_to_string
+from django.template import Context, Template
 from django.conf import settings
 from django.utils.translation import get_language
+from django.utils.safestring import mark_safe
 from django.shortcuts import render
+
+from transmeta import get_real_fieldname
 
 from models import Page
 
-DEFAULT_TEMPLATE = 'flatpage/default.html'
+DEFAULT_TEMPLATE = 'contento/default.html'
 
 
 def markup(txt, markupname=""):
@@ -28,6 +31,7 @@ def page(request, url):
     """
 
     """
+    vars = {}
     if not url.endswith('/') and settings.APPEND_SLASH:
         return HttpResponseRedirect("%s/" % request.path)
     if not url.startswith('/'):
@@ -38,22 +42,23 @@ def page(request, url):
     if f.registration_required and not request.user.is_authenticated():
         from django.contrib.auth.views import redirect_to_login
         return redirect_to_login(request.path)
-    # Serve the content in the language defined by the Django translation module
-    # if possible else serve the default language.
-    f._default_language = get_language()
 
-    variables = f.variables.to_python()
-
-    # default variables for current language
-    if f._default_language in variables:
-        f.update(variables[f._default_language])
-
-    # apply variables to content
+    # TODO
+    # # apply variables to content
     if f.variables:
-        f.content = render_to_string(f.content, )
+        vars.update(f.variables)
+        lang = get_language()
+        # default variables for current language
+        if lang in f.variables:
+            f.update(f.variables[lang])
+
+        content = get_real_fieldname("content", lang)
+
+        t = Template(content)
+        f.content_rndr = mark_safe(t.render(Context(f.variables)))
 
     # render html acording to markup
     markup_name = Page.MARKUP_CHOICES[f.render_with]
-    f.content = markup(f.content, markup_name)
-
-    return render(request, f.template_name or DEFAULT_TEMPLATE, f)
+    f.content_rndr = markup(f.content_rndr, markup_name)
+    vars.update({"page": f})
+    return render(request, f.template_name or DEFAULT_TEMPLATE, vars)

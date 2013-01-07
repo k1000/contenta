@@ -1,7 +1,6 @@
 from django import forms
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
-from django.forms.models import fields_for_model
 
 from transmeta import canonical_fieldname
 from models import Page
