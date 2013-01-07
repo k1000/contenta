@@ -1,2 +1,2 @@
 recursive-include docs *
-recursive-include schedule/templates *
+recursive-include contento/templates *
