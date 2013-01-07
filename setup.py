@@ -11,6 +11,7 @@ setup(
     url='http://github.com/k1000/django-contento/tree/master',
     packages=[
         'contento',
+        'contento.templates',
         'contento.templatetags',
     ],
     include_package_data=True,
