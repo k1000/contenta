@@ -23,7 +23,7 @@ setup(
                  'Operating System :: OS Independent',
                  'Programming Language :: Python',
                  'Topic :: Utilities'],
-    install_requires=['django-yamlfield', 'transmeta' ],
+    install_requires=['django-yamlfield', ],
     license='BSD',
     test_suite = "contento.tests",
 )
