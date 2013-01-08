@@ -45,17 +45,19 @@ def page(request, url):
 
     # TODO
     # # apply variables to content
+    lang = get_language()
+    content_local = get_real_fieldname("content", lang)
     if f.variables:
         vars.update(f.variables)
-        lang = get_language()
+
         # default variables for current language
         if lang in f.variables:
             f.update(f.variables[lang])
 
-        content = get_real_fieldname("content", lang)
-
-        t = Template(content)
+        t = Template(content_local)
         f.content_rndr = mark_safe(t.render(Context(f.variables)))
+    else:
+        f.content_rndr = getattr(f, content_local)
 
     # render html acording to markup
     markup_name = Page.MARKUP_CHOICES[f.render_with]
