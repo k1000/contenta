@@ -1,23 +1,52 @@
 from django.utils.translation import ugettext_lazy as _
 
 class Services():
-    services = list()
+    services = dict()
 
-    def register(self, name, service, description="", defaults="", **kwargs):
-        self.services.append([name, service, description, defaults, kwargs])
+    def register(self, identicator, name, service, kwargs=None):
+        self.services[identicator] = [name, service, kwargs]
 
-    def unregister(self, name):
-        del(self.services[name])
+    def unregister(self, identicator):
+        del(self.services[identicator])
 
     def list(self):
-        return [[i, ser[0]] for i, ser in enumerate(self.services)]
+        return zip(self.services.keys(), self.services.keys())
 
-    def get(self, index):
-        return self.services[int(index)]
+    def get(self, identicator):
+        if identicator in self.services:
+            return self.services[identicator]
+        else:
+            KeyError  # TODO protect from refering of non registered services
 
 # very simple service just takes variables from input and injects them to the template
 def enviroment(request, data):
     return data
 
+def redirect(request, data):
+    from django.http import HttpResponseRedirect
+    if not "url" in data:
+        ValueError
+    return HttpResponseRedirect( data.get("url") )
+
+def get_pages(request, data):
+    from models import Page
+    pages = Page.objects.filter(**data.get("filter"))
+    return pages
+
 services = Services()
-services.register(_("enviroment"), enviroment, "Injects variables into the context of the template")
+services.register("enviroment", _("enviroment"),
+        enviroment, 
+        {"desc": "Injects variables into the context of the template"})
+
+services.register("redirect", _("redirect"),
+        redirect,
+        {"desc": "Redirects page to new url. ex: url:http//google.com", 
+        "url": "/admin/",
+        "return": True})
+
+services.register("pages", _("get pages"),
+        get_pages,
+        {"desc": "Get pages on given criteria.", 
+        "default": """filter:
+  services__variables__contains: 'cat: blog'""",})
+

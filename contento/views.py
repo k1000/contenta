@@ -49,7 +49,12 @@ def page(request, url):
     page_services = f.services.all()
     if page_services:
         for service in page_services:
-            cur_service = services.get(int(service.service))
+            cur_service = services.get(service.service)
+
+            # return for redirect etc
+            if "return" in cur_service[2]:
+                return cur_service[1](request, service.variables)
+
             cur_vars = cur_service[1](request, service.variables)
 
             # make default variables for current language

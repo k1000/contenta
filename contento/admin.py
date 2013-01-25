@@ -3,6 +3,7 @@ from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 
 from models import Page, Service
+from services import services
 from django.conf import settings
 
 
@@ -24,6 +25,7 @@ class ServiceInline(admin.TabularInline):
 
 class ContentAdmin(admin.ModelAdmin):
     form = ContentForm
+    services = services
 
     def get_fieldsets(self, request, obj=None):
         fieldsets = [(None, {'fields': ('url', 'sites', 'state')})]
@@ -32,11 +34,11 @@ class ContentAdmin(admin.ModelAdmin):
                 'fields': ('title_%s' % lang[0], 'expert_%s' % lang[0], 'content_%s' % lang[0],)}))
         fieldsets.append((_('Advanced options'),
             {'classes': ('collapse',),
-            'fields': ('registration_required', 'template_name')}))
+            'fields': ('registration_required', 'render_with', 'template_name')}))
         return fieldsets
 
     list_display = ('url', 'title', 'state', 'created_at')
-    list_filter = ('sites', 'registration_required', "state", "sites")
+    list_filter = ('sites', 'registration_required', "state")
     search_fields = ('url', 'title')
     exclude = ("created_by",)
     inlines = (ServiceInline, )

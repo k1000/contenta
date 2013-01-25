@@ -68,14 +68,16 @@ class Page(models.Model):
 
 class Service(models.Model):
     page = models.ForeignKey(Page, related_name="services")
-    service = models.SmallIntegerField(_("service"), choices=services.list())
+    service = models.SlugField(_("service"), choices=services.list())
     namespace = models.SlugField(_("namespace"), max_length=50,
         null=True, blank=True,
         help_text=_("Name of variable under which service will apear in the template")
     )
-    variables = YAMLField(_("Variables"), blank=True, null=True,
+    variables = YAMLField(_("Variables"),
+        blank=True, null=True,
+        db_index=True,
         help_text=_("""YAML formated text with variables. http://www.yaml.org/. eg: img:
 youtube:
 iframe:"""),
     )
-    weight = models.PositiveSmallIntegerField(_('weight'), default=1)
+    #weight = models.PositiveSmallIntegerField(_('weight'), default=1)
