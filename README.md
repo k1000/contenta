@@ -58,7 +58,8 @@ To register new custom service somewhere in your code add:
     def foo(request, data):
         # do something...
         return data
-    services.register("Foo service", foo, "description of the service")
+    services.register("Foo service", foo, "description of the service", """default_var1: xxx
+    default_var2: 2""")
 
 Licence
 -------
