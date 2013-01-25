@@ -1,0 +1,4 @@
+django-transmeta
+django-yamlfield
+sorl-thumbnail
+-e git+https://github.com/wardi/django-filebrowser-no-grappelli.git#egg=filebrowser
