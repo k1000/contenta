@@ -36,7 +36,7 @@ Create tables etc.:
 Extending
 ---------
 You can extend functionality of the page by registering services and then selecting them in admin panel.
-You can pass additional variables to the service introducing YAML (http://www.yaml.org/) formatted text in "variables" field.
+You can pass arbitrary additional variables to the service introducing YAML (http://www.yaml.org/) formatted text in "variables" field.
 
 Example of "variables" field:
 
@@ -50,9 +50,9 @@ Example of "variables" field:
     
 Variables with prefix of current active language ex: "en" will be set to default.
 
-Somewhere in your code add:
+To register new custom service somewhere in your code add:
 
-    from contento.views import services
+    from contento.services import services
     
     # request arg is obligatory
     def foo(request, data):
