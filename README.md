@@ -1,7 +1,7 @@
 Contento
 ========
-
-Simple, extendible CMS writen on Django
+Django FlatPages on Steroids...
+Simple, extendible CMS writen on Django. 
 
 Features:
 * Multilanguage
