@@ -22,6 +22,7 @@ Install via pip:
 Add to INSTALLED_APPS in settings.py:
     
     'contento',
+    'sorl.thumbnail',  # *optional
 
 Add to 'urlpatterns' (at the end) urls.py:
     
