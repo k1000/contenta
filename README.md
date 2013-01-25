@@ -5,7 +5,7 @@ Simple, extendible CMS writen on Django.
 
 Features:
 * Multilanguage
-* Rich text editor
+* Rich text editor CKEditor http://ckeditor.com/
 * Easly extendible
 
 Requirements:
@@ -32,3 +32,7 @@ Create tables etc.:
 
 Extending
 ---------
+
+
+Licence
+-------
