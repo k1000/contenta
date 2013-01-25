@@ -25,3 +25,10 @@ Add to INSTALLED_APPS in settings.py:
 Add to 'urlpatterns' (at the end) urls.py:
     
     (r'', include('contento.urls')),
+    
+Create tables etc.:
+
+    python manage.py syncdb
+
+Extending
+---------
