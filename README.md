@@ -33,7 +33,16 @@ Create tables etc.:
 
 Extending
 ---------
+You can extend functionality of the page by registering services and then selecting them in admin panel.
+You can pass additional variables to the function introducing YAML formatted text in "variables" field.
 
+Somewhere in your code add:
+
+    from contento.views import services
+    
+    def foo(request, data):
+        return data
+    services.register("Foo service", foo)
 
 Licence
 -------
