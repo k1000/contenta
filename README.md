@@ -12,6 +12,7 @@ Requirements:
 * django-transmeta 
 * django-yamlfield
 * sorl-thumbnail *optional
+* filebrowser * optional for CKEditor https://github.com/wardi/django-filebrowser-no-grappelli.git
 
 Installing
 ----------
@@ -36,6 +37,18 @@ Extending
 ---------
 You can extend functionality of the page by registering services and then selecting them in admin panel.
 You can pass additional variables to the service introducing YAML (http://www.yaml.org/) formatted text in "variables" field.
+
+Example of "variables" field:
+
+    img:
+      src: https://www.dzogchen.de/Resources/ssi-logo.gif
+    youtube: 8CMlxwvjFEU
+    en: 
+      tags: web, web developement
+    es:
+      tags: web, desarrolo web 
+    
+Variables with prefix of current active language ex: "en" will be set to default.
 
 Somewhere in your code add:
 
