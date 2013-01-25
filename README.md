@@ -11,7 +11,7 @@ Features:
 Requirements:
 * django-transmeta 
 * django-yamlfield
-* sorl.thumbnail *optional
+* sorl-thumbnail *optional
 
 Installing
 ----------
