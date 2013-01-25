@@ -34,7 +34,7 @@ Create tables etc.:
 Extending
 ---------
 You can extend functionality of the page by registering services and then selecting them in admin panel.
-You can pass additional variables to the function introducing YAML (http://www.yaml.org/) formatted text in "variables" field.
+You can pass additional variables to the service introducing YAML (http://www.yaml.org/) formatted text in "variables" field.
 
 Somewhere in your code add:
 
@@ -42,6 +42,7 @@ Somewhere in your code add:
     
     # request arg is obligatory
     def foo(request, data):
+        # do something...
         return data
     services.register("Foo service", foo, "description of the service")
 
