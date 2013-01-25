@@ -15,6 +15,6 @@ Add to INSTALLED_APPS in settings.py:
     
     'contento',
 
-Add to urls.py:
+Add to 'urlpatterns' (at the end) urls.py:
     
-    '(r'', include('contento.urls')),
+    (r'', include('contento.urls')),
