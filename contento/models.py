@@ -7,6 +7,8 @@ from django.contrib.sites.models import Site
 from transmeta import TransMeta
 from yamlfield.fields import YAMLField  # https://github.com/datadesk/django-yamlfield
 
+from services import services
+
 
 class Page(models.Model):
     """Registry model"""
@@ -35,18 +37,12 @@ class Page(models.Model):
     expert = models.TextField(_("expert"))
     content = models.TextField(_("content"))
 
-    variables = YAMLField(_("Variables"), blank=True,
-        help_text=_("""YAML formated text with variables. http://www.yaml.org/. eg: img:
-youtube:
-iframe:"""),
-        )
-
     render_with = models.PositiveSmallIntegerField(_('render with'),
                     blank=True,
                     choices=MARKUP_CHOICES,
                     default=1)
     template_name = models.CharField(_('template name'), max_length=70, blank=True,
-        help_text=_("Example: 'flatpages/contact_page.html'. If this isn't provided, \
+        help_text=_("Example: 'contento/contact_page.html'. If this isn't provided, \
         the system will use 'contento/default.html'."))
 
     registration_required = models.BooleanField(_('registration required'),
@@ -68,3 +64,18 @@ iframe:"""),
 
     def get_absolute_url(self):
         return self.url
+
+
+class Service(models.Model):
+    page = models.ForeignKey(Page, related_name="services")
+    service = models.SmallIntegerField(_("service"), choices=services.list())
+    namespace = models.SlugField(_("namespace"), max_length=50,
+        null=True, blank=True,
+        help_text=_("Name of variable under which service will apear in the template")
+    )
+    variables = YAMLField(_("Variables"), blank=True, null=True,
+        help_text=_("""YAML formated text with variables. http://www.yaml.org/. eg: img:
+youtube:
+iframe:"""),
+    )
+    weight = models.PositiveSmallIntegerField(_('weight'), default=1)

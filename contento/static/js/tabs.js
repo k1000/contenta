@@ -17,7 +17,7 @@
 		for (first in tabs) break;
 		var first_tab = tabs[first];
 		var current_tab = first_tab.ele;
-		current_tab.children(":first-child").addClass("active");
+		// current_tab.children(":first-child").addClass("active");
 		first_tab.ele
 			.show()
 			.before(tab_ele); //.find("a").click(function(){ alert(this)});
@@ -30,5 +30,6 @@
 			current_tab = tabs[current_tab_id].ele;
 			current_tab.show();
 		});
+		$(".tabs a:first").addClass("active");
 	});
 })(django.jQuery);

@@ -1,16 +1,15 @@
 {% extends "base.html" %}{% load i18n cache thumbnail %}
 
 {% block aside %}
+{% endblock aside %}
+
+{% block content %}
 <h1>{{ page.title }}</h1>
-
-
-{% endblock aside %}{% block content %}
-	
-{% if image %}
+{% if img %}
 		<figure>
 		<!-- http://proxy.boxresizer.com/convert?resize=650x150&source= -->
-		<img src="../images/{{ page.image }}" alt="{{ page.title }}" width="100%" />
-		{% if page.by %}<figcaption>por <em>{{ page.by }}</em></figcaption>{% endif %}
+		<img src="{{ img.src }}" alt="{{ page.title }}" width="100%" />
+		{% if img.by %}<figcaption>{% trans "by" %} <em>{{ img.by }}</em></figcaption>{% endif %}
 		<figure>
 {% endif %}
 
@@ -30,7 +29,7 @@
 {% endif %}
 
 {% if iframe %}
-	<iframe width='100%' height='500' frameborder='0' src='{{ page.iframe }}'></iframe>
+	<iframe width='100%' height='500' frameborder='0' src='{{ iframe }}'></iframe>
 {% endif %}
 
 {% endblock content %}

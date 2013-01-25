@@ -8,7 +8,7 @@ from django.shortcuts import render
 
 from transmeta import get_real_fieldname
 
-from models import Page
+from models import Page, services
 
 DEFAULT_TEMPLATE = 'contento/default.html'
 
@@ -31,7 +31,7 @@ def page(request, url):
     """
 
     """
-    vars = {}
+    vars = Context()
     if not url.endswith('/') and settings.APPEND_SLASH:
         return HttpResponseRedirect("%s/" % request.path)
     if not url.startswith('/'):
@@ -43,19 +43,26 @@ def page(request, url):
         from django.contrib.auth.views import redirect_to_login
         return redirect_to_login(request.path)
 
-    # TODO
-    # # apply variables to content
     lang = get_language()
     content_local = get_real_fieldname("content", lang)
-    if f.variables:
-        vars.update(f.variables)
 
-        # default variables for current language
-        if lang in f.variables:
-            f.update(f.variables[lang])
+    page_services = f.services.all()
+    if page_services:
+        for service in page_services:
+            cur_service = services.get(int(service.service))
+            cur_vars = cur_service[1](request, service.variables)
+
+            # make default variables for current language
+            if lang in cur_vars:
+                vars.update(cur_vars[lang])
+            else:
+                if service.namespace:
+                    vars[service.namespace] = cur_vars
+                else:
+                    vars.update(cur_vars)
 
         t = Template(content_local)
-        f.content_rndr = mark_safe(t.render(Context(f.variables)))
+        f.content_rndr = mark_safe(t.render(vars))
     else:
         f.content_rndr = getattr(f, content_local)
 
