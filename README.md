@@ -24,6 +24,7 @@ Add to INSTALLED_APPS in settings.py:
     
     'contento',
     'sorl.thumbnail',  # *optional
+    'filebrowser',  # *optional for CKEditor
 
 Add to 'urlpatterns' (at the end) urls.py:
     
@@ -50,7 +51,7 @@ Example of "variables" field:
     
 Variables with prefix of current active language ex: "en" will be set to default.
 
-To register new custom service somewhere in your code add:
+To register new custom service add somewhere in your code:
 
     from contento.services import services
     
@@ -63,7 +64,7 @@ To register new custom service somewhere in your code add:
     # obligatory args: "service name", "function"
     services.register("Foo service", 
         foo, 
-        {"desc": "description of the service", "defaul": """default_var1: xxx
+        {"desc": "description of the service", "default": """default_var1: xxx
     default_var2: 2"""})
 
 Licence
