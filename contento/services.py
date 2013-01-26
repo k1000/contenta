@@ -3,8 +3,8 @@ from django.utils.translation import ugettext_lazy as _
 class Services():
     services = dict()
 
-    def register(self, identicator, name, service, kwargs=None):
-        self.services[identicator] = [name, service, kwargs]
+    def register(self, identicator, service, kwargs=None):
+        self.services[identicator] = [service, kwargs]
 
     def unregister(self, identicator):
         del(self.services[identicator])
@@ -34,17 +34,17 @@ def get_pages(request, data):
     return pages
 
 services = Services()
-services.register("enviroment", _("enviroment"),
+services.register("enviroment",
         enviroment, 
         {"desc": "Injects variables into the context of the template"})
 
-services.register("redirect", _("redirect"),
+services.register("redirect",
         redirect,
         {"desc": "Redirects page to new url. ex: url:http//google.com", 
         "url": "/admin/",
         "return": True})
 
-services.register("pages", _("get pages"),
+services.register("pages",
         get_pages,
         {"desc": "Get pages on given criteria.", 
         "default": """filter:
