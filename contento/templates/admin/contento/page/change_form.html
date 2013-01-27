@@ -9,19 +9,11 @@
 <script type="text/javascript" src="{{ jsi18nurl|default:"../../../jsi18n/" }}"></script>
 {{ media }}
 <script type="text/javascript">
-  django.jQuery(document).ready(function() {
-      if (CKEDITOR) {
-          // Added by Roger Hu 02/27/2010
-          CKEDITOR.config.filebrowserBrowseUrl = '/admin/filebrowser/browse?pop=3';
-          django.jQuery("textarea").each(function(n, obj) {
-            if (obj.id.match(/content/)) {
-              CKEDITOR.replace(obj.id) ;
-              // fck.BasePath = "/static/fckeditor/" ;
-              //fck.ReplaceTextarea() ;
-            }
-          });
-      }
-  });
+window.service_descriptions = {};
+window.service_defaults = {};
+{% for name, service in original.serv.services.items  %}
+window.service_descriptions["{{name}}"] = "'{{name}}': {{service.1.desc|safe}}";
+{% endfor %}
 </script>
 {% endblock %}
 

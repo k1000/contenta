@@ -6,6 +6,7 @@ from django.utils.translation import get_language
 from django.utils.safestring import mark_safe
 from django.shortcuts import render
 
+
 from transmeta import get_real_fieldname
 
 from models import Page, services
@@ -15,14 +16,14 @@ DEFAULT_TEMPLATE = 'contento/default.html'
 
 def markup(txt, markupname=""):
     if markupname is Page.TEXTILE:
-        import textile
-        return textile.textile(txt)
+        from django.markup import textile
+        return textile(txt)
     elif markupname is Page.MARKDOWN:
-        import markdown
-        return markdown.markdown(txt)
+        from django.markup import markdown
+        return markdown(txt)
     elif markupname is Page.RESTRUCTUREDTEXT:
-        from docutils.core import publish_parts
-        return publish_parts(txt)
+        from django.markup import restructuredtext
+        return restructuredtext(txt)
     else:
         return txt
 
@@ -36,7 +37,7 @@ def page(request, url):
         return HttpResponseRedirect("%s/" % request.path)
     if not url.startswith('/'):
         url = "/" + url
-    f = get_object_or_404(Page, url__exact=url, sites__id__exact=settings.SITE_ID)
+    f = get_object_or_404(Page, url__exact=url, sites__id__exact=settings.SITE_ID, state__exact=2)
     # If registration is required for accessing this page, and the user isn't
     # logged in, redirect to the login page.
     if f.registration_required and not request.user.is_authenticated():
@@ -51,20 +52,17 @@ def page(request, url):
         for service in page_services:
             cur_service = services.get(service.service)
 
-            # return for redirect etc
+            # shortcircut return for redirect etc
             if "return" in cur_service[1]:
                 return cur_service[0](request, service.variables)
 
             cur_vars = cur_service[0](request, service.variables)
 
-            # make default variables for current language
+            # default variables for current language
             if lang in cur_vars:
                 vars.update(cur_vars[lang])
             else:
-                if service.namespace:
-                    vars[service.namespace] = cur_vars
-                else:
-                    vars.update(cur_vars)
+                vars.update(cur_vars)
 
         t = Template(content_local)
         f.content_rndr = mark_safe(t.render(vars))
@@ -72,7 +70,7 @@ def page(request, url):
         f.content_rndr = getattr(f, content_local)
 
     # render html acording to markup
-    markup_name = Page.MARKUP_CHOICES[f.render_with]
+    markup_name = Page.MARKUP_CHOICES[f.render_with - 1][1]
     f.content_rndr = markup(f.content_rndr, markup_name)
     vars.update({"page": f})
     return render(request, f.template_name or DEFAULT_TEMPLATE, vars)

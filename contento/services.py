@@ -1,4 +1,6 @@
-from django.utils.translation import ugettext_lazy as _
+# -*- coding: utf-8 -*-
+from django.conf import settings
+
 
 class Services():
     services = dict()
@@ -18,35 +20,56 @@ class Services():
         else:
             KeyError  # TODO protect from refering of non registered services
 
+
 # very simple service just takes variables from input and injects them to the template
 def enviroment(request, data):
     return data
 
+
 def redirect(request, data):
     from django.http import HttpResponseRedirect
-    if not "url" in data:
-        ValueError
-    return HttpResponseRedirect( data.get("url") )
+    if not "url" in data or data["url"] is None:
+        if not settings.DEBUG:
+            return {}
+    return HttpResponseRedirect(data.get("url"))
+
 
 def get_pages(request, data):
     from models import Page
     pages = Page.objects.filter(**data.get("filter"))
     return pages
 
+
+def clean_page(data):
+    if not "filter" in data:
+        return "You must have filter keyword. See django docs for queries"
+    else:
+        return None
+
+
+def clean_redirect(data):
+    if not "url" in data:
+        return "You must indicate url to redirect. ex: url: '/admin/'"
+    else:
+        return None
+
 services = Services()
+
 services.register("enviroment",
-        enviroment, 
-        {"desc": "Injects variables into the context of the template"})
+        enviroment,
+        {"desc": "variables are added to the context of the template",
+        "default": """img: '/'"""})
 
 services.register("redirect",
         redirect,
-        {"desc": "Redirects page to new url. ex: url:http//google.com", 
+        {"desc": "redirects page to new url. ex: url: /admin/",
         "url": "/admin/",
+        "default": "url: '/'",
+        "clean": clean_redirect,
         "return": True})
 
 services.register("pages",
         get_pages,
-        {"desc": "Get pages on given criteria.", 
-        "default": """filter:
-  services__variables__contains: 'cat: blog'""",})
-
+        {"desc": "gets contento pages on given criteria.",
+        "default": """filter: services__variables__contains: 'cat: blog'""",
+        "clean": clean_page})

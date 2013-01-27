@@ -18,17 +18,33 @@ class ContentForm(forms.ModelForm):
         model = Page
 
 
+class ServiceForm(forms.ModelForm):
+    def clean(self):
+        cleaned_data = super(ServiceForm, self).clean()
+        serv = cleaned_data.get("service")
+        dat = services.services[serv][1]
+        if "clean" in dat:
+            variables = cleaned_data.get("variables")
+            clean = dat["clean"](variables)
+            if clean:
+                raise forms.ValidationError(clean)
+        return cleaned_data
+
+    class Meta:
+        model = Service
+
+
 class ServiceInline(admin.TabularInline):
+    form = ServiceForm
     model = Service
     extra = 1
 
 
 class ContentAdmin(admin.ModelAdmin):
     form = ContentForm
-    services = services
 
     def get_fieldsets(self, request, obj=None):
-        fieldsets = [(None, {'fields': ('url', 'sites', 'state')})]
+        fieldsets = [(None, {'fields': (('url', 'parent'), 'sites', 'state')})]
         for lang in settings.LANGUAGES:
             fieldsets.append((lang[1], {'classes': (lang[0], 'tab'),
                 'fields': ('title_%s' % lang[0], 'expert_%s' % lang[0], 'content_%s' % lang[0],)}))
@@ -39,7 +55,10 @@ class ContentAdmin(admin.ModelAdmin):
 
     list_display = ('url', 'title', 'state', 'created_at')
     list_filter = ('sites', 'registration_required', "state")
-    search_fields = ('url', 'title')
+    search_fields = ['url']
+    for lang in settings.LANGUAGES:
+        search_fields.append("title_%s" % lang[0])
+
     exclude = ("created_by",)
     inlines = (ServiceInline, )
 
@@ -49,7 +68,9 @@ class ContentAdmin(admin.ModelAdmin):
 
     class Media:
         css = {"all": ("css/tabs.css",)}
-        js = ("js/tabs.js", "ckeditor/ckeditor.js", "filebrowser/js/FB_CKEditor.js")
+        js = ["js/tabs.js", "ckeditor/ckeditor.js"]
+        if "filebrowser" in settings.INSTALLED_APPS:
+            js.append("filebrowser/js/FB_CKEditor.js")
 
 
 #admin.site.register(ContentAdmin, ContentForm)
