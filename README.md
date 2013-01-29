@@ -60,7 +60,7 @@ Variables with prefix of current active language ex: "en" will be set to default
 
 To register new custom service add somewhere in your code:
 
-    from contento.services import services
+    from contenta.services import services
     
     # request arg is obligatory
     # returns dict
