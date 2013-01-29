@@ -82,5 +82,9 @@ To register new custom service add somewhere in your code:
         "default": """default_var1: xxx
     default_var2: 2"""})
 
+TODO
+----
+* edit in place
+
 Licence
 -------
