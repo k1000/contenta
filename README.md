@@ -7,12 +7,17 @@ Features:
 * Multilanguage
 * Rich text editor CKEditor http://ckeditor.com/
 * Easly extendible
+* Protected pages only for logged users
 
 Requirements:
-* django-transmeta 
 * django-yamlfield
-* sorl-thumbnail *optional
-* filebrowser * optional for CKEditor https://github.com/wardi/django-filebrowser-no-grappelli.git
+ 
+Optional Requirements:
+* sorl-thumbnail
+* filebrowser - for CKEditor https://github.com/wardi/django-filebrowser-no-grappelli.git
+* textile
+* markdown
+* docutils - restructeredtext
 
 Installing
 ----------
@@ -24,6 +29,7 @@ Add to INSTALLED_APPS in settings.py:
     
     'contento',
     'sorl.thumbnail',  # *optional
+    'filebrowser',  # *optional for CKEditor
 
 Add to 'urlpatterns' (at the end) urls.py:
     
@@ -50,19 +56,31 @@ Example of "variables" field:
     
 Variables with prefix of current active language ex: "en" will be set to default.
 
-To register new custom service somewhere in your code add:
+To register new custom service add somewhere in your code:
 
     from contento.services import services
     
     # request arg is obligatory
-    def foo(request, data):
+    # returns dict
+    def service(request, data):
+        # do something...
+        return data
+        
+    # data arg is obligatory
+    # returns str with Error description or None
+    def clean_service(data):
         # do something...
         return data
         
     # you can set default values too
-    # obligatory args: "service name", "function"
-    services.register("Foo service", foo, "description of the service", """default_var1: xxx
-    default_var2: 2""")
+    # obligatory args: "service name", "function" 
+    services.register("service name", 
+        service, # function which returns dict with service
+        {"desc": "description of the service",
+        "clean": clean_service,  # optional function which checks vaild input of variables
+        "return": True,  # optional when when service needs intercepts response and redirects to another url for example
+        "default": """default_var1: xxx
+    default_var2: 2"""})
 
 Licence
 -------
