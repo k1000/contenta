@@ -2,7 +2,7 @@ from django import template
 from django.utils.translation import ugettext as _
 from django.conf import settings
 
-from contento.models import Page
+from contenta.models import Page
 
 register = template.Library()
 
