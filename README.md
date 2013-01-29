@@ -24,11 +24,11 @@ Installing
 ----------
 Install via pip:
 
-    pip install -e git+https://github.com/k1000/contenta.git#egg=contento
+    pip install -e git+https://github.com/k1000/contenta.git#egg=contenta
 
 Add to INSTALLED_APPS in settings.py:
     
-    'contento',
+    'contenta',
     'sorl.thumbnail',  # *optional
     'filebrowser',  # *optional for CKEditor
 
