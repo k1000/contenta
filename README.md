@@ -1,4 +1,4 @@
-Contento
+Contenta
 ========
 Django FlatPages on Steroids...
 Simple, extendible CMS writen on Django. 
@@ -23,7 +23,7 @@ Installing
 ----------
 Install via pip:
 
-    pip install -e git+https://github.com/k1000/contento.git#egg=contento
+    pip install -e git+https://github.com/k1000/contenta.git#egg=contento
 
 Add to INSTALLED_APPS in settings.py:
     
