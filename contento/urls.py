@@ -1,5 +1,6 @@
 from django.conf.urls.defaults import *
 
 urlpatterns = patterns('contento.views',
-    (r'^(?P<url>.*)$', 'page'),
+	(r'^json/(?P<url>.*)$', 'render_json'),
+    (r'^(?P<url>.*)$', 'render_page'),
 )

@@ -3,9 +3,22 @@ from django.conf import settings
 
 
 class Services():
+    """
+    Singleton: Stores registerd services available for pages
+    """
     services = dict()
 
     def register(self, identicator, service, kwargs=None):
+        """
+        Register service available for pages
+
+        Parameters
+        ----------
+        identicator : str
+        service : function
+        kwargs : iterable object optional
+
+        """
         self.services[identicator] = [service, kwargs]
 
     def unregister(self, identicator):
@@ -21,12 +34,19 @@ class Services():
             KeyError  # TODO protect from refering of non registered services
 
 
-# very simple service just takes variables from input and injects them to the template
 def enviroment(request, data):
+    """
+    Very simple service just takes variables
+    from input and injects them to the template
+    """
     return data
 
 
 def redirect(request, data):
+    """
+    Very simple service just takes variables
+    from input and injects them to the template
+    """
     from django.http import HttpResponseRedirect
     if not "url" in data or data["url"] is None:
         if not settings.DEBUG:

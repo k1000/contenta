@@ -1,13 +1,11 @@
 from django.shortcuts import get_object_or_404
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.template import Context, Template
 from django.conf import settings
-from django.utils.translation import get_language
+from django.utils import translation
 from django.utils.safestring import mark_safe
 from django.shortcuts import render
-
-
-from transmeta import get_real_fieldname
+from django.contrib.admin.views.decorators import staff_member_required
 
 from models import Page, services
 
@@ -44,8 +42,8 @@ def page(request, url):
         from django.contrib.auth.views import redirect_to_login
         return redirect_to_login(request.path)
 
-    lang = get_language()
-    content_local = get_real_fieldname("content", lang)
+    lang = f.language
+    translation.activate(lang)
 
     page_services = f.services.all()
     if page_services:
@@ -64,13 +62,35 @@ def page(request, url):
             else:
                 vars.update(cur_vars)
 
-        t = Template(content_local)
+        t = Template(f.content)
         f.content_rndr = mark_safe(t.render(vars))
     else:
-        f.content_rndr = getattr(f, content_local)
+        f.content_rndr = f.content
 
     # render html acording to markup
     markup_name = Page.MARKUP_CHOICES[f.render_with - 1][1]
     f.content_rndr = markup(f.content_rndr, markup_name)
     vars.update({"page": f})
-    return render(request, f.template_name or DEFAULT_TEMPLATE, vars)
+    return vars
+
+
+def render_page(request, url):
+
+    context = page(request, url)
+    if type(context) is Context:
+        return render(request, context['page'].template_name or DEFAULT_TEMPLATE, context)
+    else:
+        return context
+
+
+@staff_member_required
+def render_json(request, url):
+    from django.core import serializers
+
+    context = page(request, url)
+    if type(context) is Context:
+        json = serializers.serialize('json', [context['page']])
+    else:
+        json = [{"title": "Page has redirect. Nothing to show"}]
+
+    return HttpResponse(json, mimetype='application/json')

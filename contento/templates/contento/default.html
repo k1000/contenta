@@ -5,6 +5,19 @@
 
 {% block content %}
 <h1>{{ page.title }}</h1>
+
+<ul class="breadcumbs">
+	{% for pag in page.get_parents %}
+	<li><a href="{{ pag.get_absolute_url }}">{{ pag.title }}</a></li>
+	{% endfor %}
+</ul>
+
+<ul class="menu">
+	{% for pag in page.get_siblings %}
+	<li><a href="{{ pag.get_absolute_url }}">{{ pag.title }}</a></li>
+	{% endfor %}
+</ul>
+
 {% if img %}
 		<figure>
 		<!-- http://proxy.boxresizer.com/convert?resize=650x150&source= -->
@@ -13,8 +26,8 @@
 		<figure>
 {% endif %}
 
-	<div class="content">
-	{{ page.content|safe }}
+	<div class="content{% if user.is_staff %} editable{% endif %}" lang="{{ LANGUAGE_CODE }}" >
+	{{ page.content_rndr|safe }}
 	</div>
 
 {% if map %}
@@ -31,4 +44,13 @@
 	<iframe width='100%' height='500' frameborder='0' src='{{ iframe }}'></iframe>
 {% endif %}
 
-{% endblock content %}
+{% endblock content %}	
+
+{% block js %}
+{{ block.super }} 
+{% if user.is_staff %} 
+<script type="text/javascript" src="/static/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="/static/ckeditor/adapters/jquery.js"></script>
+<script type="text/javascript" src="/static/js/ck-in-place.js"></script>
+{% endif %}
+{% endblock js %}

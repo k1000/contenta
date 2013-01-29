@@ -7,12 +7,29 @@ from services import services
 from django.conf import settings
 
 
+def page_choices(instance):
+    """
+    excluded self
+    """
+    return Page.objects.exclude(pk=instance.pk)
+
+
 class ContentForm(forms.ModelForm):
-    url = forms.RegexField(label=_("URL"), max_length=100, regex=r'^[-\w/\.~]+$',
-        help_text=_("Example: '/about/contact/'. Make sure to have leading"
-                      " and trailing slashes."),
-        error_message=_("This value must contain only letters, numbers,"
-                          " dots, underscores, dashes, slashes or tildes."))
+    def __init__(self, *args, **kwargs):
+        super(ContentForm, self).__init__(*args, **kwargs)
+        # protect that page can asign self as parent or source of translation
+        self.fields['parent'].queryset = page_choices(self.instance)
+        self.fields['translation_from'].queryset = page_choices(self.instance)
+
+    # translation_from = forms.ModelChoiceField(
+    #     queryset=Page.objects.exclude(pk=1),
+    # )
+    #queryset=Area.objects.exclude(area=None)
+    # url = forms.RegexField(label=_("URL"), max_length=100, regex=r'^[-\w/\.~]+$',
+    #     help_text=_("Example: '/about/contact/'. Make sure to have leading"
+    #                   " and trailing slashes."),
+    #     error_message=_("This value must contain only letters, numbers,"
+    #                       " dots, underscores, dashes, slashes or tildes."))
 
     class Meta:
         model = Page
@@ -43,21 +60,26 @@ class ServiceInline(admin.TabularInline):
 class ContentAdmin(admin.ModelAdmin):
     form = ContentForm
 
-    def get_fieldsets(self, request, obj=None):
-        fieldsets = [(None, {'fields': (('url', 'parent'), 'sites', 'state')})]
-        for lang in settings.LANGUAGES:
-            fieldsets.append((lang[1], {'classes': (lang[0], 'tab'),
-                'fields': ('title_%s' % lang[0], 'expert_%s' % lang[0], 'content_%s' % lang[0],)}))
-        fieldsets.append((_('Advanced options'),
+    fieldsets = (
+        (None,
+            {'fields': (('created_at', 'created_by'), 'modified_at', )}
+        ),
+        (None, {'fields': (
+            ('url', 'parent'),
+            'sites',
+            'state',
+            ('language', 'translation_from'))}),
+        (None, {'fields': ('title', 'slug', 'expert', 'content')}),
+        (_('Advanced options'),
             {'classes': ('collapse',),
-            'fields': ('registration_required', 'render_with', 'template_name')}))
-        return fieldsets
-
-    list_display = ('url', 'title', 'state', 'created_at')
-    list_filter = ('sites', 'registration_required', "state")
-    search_fields = ['url']
-    for lang in settings.LANGUAGES:
-        search_fields.append("title_%s" % lang[0])
+            'fields': ('registration_required', 'render_with', 'template_name', 'variables')}
+        ),
+    )
+    readonly_fields = ('url', 'created_by', 'created_at', 'modified_at')
+    list_display = ('url', 'title', 'language', 'state', 'created_at')
+    list_filter = ('sites', 'registration_required', "state", "language")
+    search_fields = ['url', 'title']
+    prepopulated_fields = {"slug": ("title",)}
 
     exclude = ("created_by",)
     inlines = (ServiceInline, )
