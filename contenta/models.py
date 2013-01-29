@@ -23,7 +23,7 @@ class PageManager(models.Manager):
 
 
 class Page(models.Model):
-    """Registry model"""
+    """Page model"""
 
     objects = PageManager()
 
@@ -83,8 +83,8 @@ class Page(models.Model):
                     default=1)
 
     template_name = models.CharField(_('template name'), max_length=70, blank=True,
-        help_text=_("Example: 'contento/contact_page.html'. If this isn't provided, \
-        the system will use 'contento/default.html'."))
+        help_text=_("Example: 'contenta/contact_page.html'. If this isn't provided, \
+        the system will use 'contenta/default.html'."))
 
     registration_required = models.BooleanField(_('registration required'),
         help_text=_("If this is checked, only logged-in users will be able to view the page."))
