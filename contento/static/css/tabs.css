@@ -71,3 +71,10 @@
 	  margin: 0;
 	  margin-top: 2em;
 }
+#preview {
+	float: left;
+	margin-right: 5px;
+	width: 30%;
+	border: 1px solid rgb(207, 207, 207);
+	padding: 10px;
+}
