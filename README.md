@@ -30,6 +30,7 @@ Add to INSTALLED_APPS in settings.py:
     'contento',
     'sorl.thumbnail',  # *optional
     'filebrowser',  # *optional for CKEditor
+    'django.contrib.markup', # *optional for markup
 
 Add to 'urlpatterns' (at the end) urls.py:
     
