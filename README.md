@@ -8,6 +8,7 @@ Features:
 * Rich text editor CKEditor http://ckeditor.com/
 * Easly extendible 
 * Protected pages only for logged users
+* Edit content in place
 
 Requirements:
 * django-yamlfield
@@ -84,7 +85,7 @@ To register new custom service add somewhere in your code:
 
 TODO
 ----
-* edit in place
+
 
 Licence
 -------
