@@ -3,12 +3,12 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='django-contento',
-    version='0.1b',
+    name='django-contenta',
+    version='0.5b',
     description='Very basic CMS',
     author='Kamil Selwa',
     author_email='selwak@gmail.com',
-    url='http://github.com/k1000/django-contento/tree/master',
+    url='http://github.com/k1000/contenta/tree/master',
     packages = find_packages(exclude=['examples', 'tests']),
     # include_package_data=True,
     zip_safe=False,
@@ -22,5 +22,5 @@ setup(
                  'Topic :: Utilities'],
     install_requires=['django-yamlfield', ],
     license='BSD',
-    test_suite = "contento.tests",
+    test_suite = "contenta.tests",
 )
