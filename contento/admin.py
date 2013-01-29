@@ -61,14 +61,12 @@ class ContentAdmin(admin.ModelAdmin):
     form = ContentForm
 
     fieldsets = (
-        (None,
-            {'fields': (('created_at', 'created_by'), 'modified_at', )}
-        ),
         (None, {'fields': (
             ('url', 'parent'),
             'sites',
             'state',
-            ('language', 'translation_from'))}),
+            ('language', 'translation_from'),
+            ('created_by', 'created_at', 'modified_at', ))}),
         (None, {'fields': ('title', 'slug', 'expert', 'content')}),
         (_('Advanced options'),
             {'classes': ('collapse',),

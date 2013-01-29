@@ -1,12 +1,12 @@
 (function($) {
 	$(document).ready(function() {
 		/// preview
-		$(".module.aligned").first().next().after("<div id='preview'></div>");
+		$(".module.aligned").first().next().before("<div id='preview'></div>");
 		function get_preview(){
 			var url = $('#id_translation_from option:selected').html();
 			$.getJSON("/json" + url, function(data) {
 				var page = data[0].fields;
-				$("#preview").html("<h1>" + page.title + "</h1><div>" + page.content + "</div>" );
+				$("#preview").html("<h1>" + page.title + "</h1><div>" + page.content_rndr + "</div>" );
 			});
 		}
 		get_preview();

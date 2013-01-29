@@ -12,15 +12,15 @@ from models import Page, services
 DEFAULT_TEMPLATE = 'contento/default.html'
 
 
-def markup(txt, markupname=""):
+def markup(txt, markupname=0):
     if markupname is Page.TEXTILE:
-        from django.markup import textile
+        from django.contrib.markup.templatetags.markup import textile
         return textile(txt)
     elif markupname is Page.MARKDOWN:
-        from django.markup import markdown
+        from django.contrib.markup.templatetags.markup import markdown
         return markdown(txt)
     elif markupname is Page.RESTRUCTUREDTEXT:
-        from django.markup import restructuredtext
+        from django.contrib.markup.templatetags.markup import restructuredtext
         return restructuredtext(txt)
     else:
         return txt
@@ -68,8 +68,7 @@ def page(request, url):
         f.content_rndr = f.content
 
     # render html acording to markup
-    markup_name = Page.MARKUP_CHOICES[f.render_with - 1][1]
-    f.content_rndr = markup(f.content_rndr, markup_name)
+    f.content_rndr = markup(f.content_rndr, f.render_with)
     vars.update({"page": f})
     return vars
 

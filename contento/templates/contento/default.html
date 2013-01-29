@@ -26,7 +26,7 @@
 		<figure>
 {% endif %}
 
-	<div class="content{% if user.is_staff %} editable{% endif %}" lang="{{ LANGUAGE_CODE }}" >
+	<div class="content{% if user.is_staff and page.render_with == 1 %} editable{% endif %}" lang="{{ LANGUAGE_CODE }}" >
 	{{ page.content_rndr|safe }}
 	</div>
 
@@ -48,7 +48,7 @@
 
 {% block js %}
 {{ block.super }} 
-{% if user.is_staff %} 
+{% if user.is_staff and page.render_with == 1 %} 
 <script type="text/javascript" src="/static/ckeditor/ckeditor.js"></script>
 <script type="text/javascript" src="/static/ckeditor/adapters/jquery.js"></script>
 <script type="text/javascript" src="/static/js/ck-in-place.js"></script>
