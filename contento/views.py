@@ -69,6 +69,7 @@ def page(request, url):
 
     # render html acording to markup
     f.content_rndr = markup(f.content_rndr, f.render_with)
+    import ipdb; ipdb.set_trace()
     vars.update({"page": f})
     return vars
 

@@ -5,8 +5,8 @@
 		function get_preview(){
 			var url = $('#id_translation_from option:selected').html();
 			$.getJSON("/json" + url, function(data) {
-				var page = data[0].fields;
-				$("#preview").html("<h1>" + page.title + "</h1><div>" + page.content_rndr + "</div>" );
+				var page = data[0];
+				$("#preview").html("<h1>" + page.fields.title + "</h1><div>" + page.content_rndr + "</div>" );
 			});
 		}
 		get_preview();
