@@ -78,7 +78,7 @@ $.fn.ckeip = function (options, callback) {
 
         $(this).before("<div id='ckeip_" + u_id + "'  style='display:none;'><textarea id ='ckeip_e_" + u_id + "' cols='" + settings.e_width + "' rows='" + settings.e_height + "'  >" + eip_html + "</textarea><input type='button' value='Save' id='save_ckeip_" + u_id + "' /> <input type='button' value='Cancel' id='cancel_ckeip_" + u_id + "' /></div>");
 
-        CKEDITOR.replace('ckeip_e_' + u_id + '');
+        var editor = CKEDITOR.replace('ckeip_e_' + u_id + '');
         //$('#ckeip_e_' + u_id + '').ckeditor(settings.ckeditor_config);
 
         $(this).bind("dblclick", function () {
@@ -101,16 +101,17 @@ $.fn.ckeip = function (options, callback) {
 
         $("#cancel_ckeip_" + u_id + "").click(function () {
             $('#ckeip_' + u_id + '').hide();
+            $(original_html).html(editor.getData());
             $(original_html).fadeIn();
             return false;
         });
 
         $("#save_ckeip_" + u_id + "").click(function () {
-            var ckeip_html = $('#ckeip_e_' + u_id + '').val();
+            var ckeip_html = editor.getData();
 			if(ckeip_html === ""){
 				ckeip_html = '<i>'+settings.e_add_text+'</i>';
 			}
-            $.post(settings.e_url, {
+            $.post("/save" + location.pathname, {
                 content: ckeip_html,
                 data: settings.data
             }, function (response) {

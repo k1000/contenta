@@ -69,7 +69,6 @@ def page(request, url):
 
     # render html acording to markup
     f.content_rndr = markup(f.content_rndr, f.render_with)
-    import ipdb; ipdb.set_trace()
     vars.update({"page": f})
     return vars
 
@@ -92,5 +91,19 @@ def render_json(request, url):
         json = serializers.serialize('json', [context['page']])
     else:
         json = [{"title": "Page has redirect. Nothing to show"}]
+
+    return HttpResponse(json, mimetype='application/json')
+
+
+@staff_member_required
+def save_content(request, url):
+    if request.method == "POST":
+        content = request.POST.get("content")
+        page = Page.objects.get(url__exact=url)
+        page.content = content
+        page.save()
+        json = [{"success":True}]
+    else:
+        json = [{"success":False}]
 
     return HttpResponse(json, mimetype='application/json')
