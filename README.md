@@ -1,12 +1,12 @@
 Contenta
 ========
-Django FlatPages on Steroids...
-Simple, extendible CMS writen on Django. 
+Tired of bloated CMS.
+Simple, extendible CMS writen on the top of Django. 
 
 Features:
 * Multilanguage
 * Rich text editor CKEditor http://ckeditor.com/
-* Easly extendible
+* Easly extendible 
 * Protected pages only for logged users
 
 Requirements:
