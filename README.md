@@ -7,12 +7,17 @@ Features:
 * Multilanguage
 * Rich text editor CKEditor http://ckeditor.com/
 * Easly extendible
+* Protected pages only for logged users
 
 Requirements:
-* django-transmeta 
 * django-yamlfield
-* sorl-thumbnail *optional
-* filebrowser * optional for CKEditor https://github.com/wardi/django-filebrowser-no-grappelli.git
+ 
+Optional Requirements:
+* sorl-thumbnail
+* filebrowser - for CKEditor https://github.com/wardi/django-filebrowser-no-grappelli.git
+* textile
+* markdown
+* docutils - restructeredtext
 
 Installing
 ----------
@@ -59,12 +64,14 @@ To register new custom service add somewhere in your code:
     def foo(request, data):
         # do something...
         return data
-        
+   
     # you can set default values too
-    # obligatory args: "service name", "function"
+    # obligatory args: "service name", "function" 
     services.register("Foo service", 
-        foo, 
-        {"desc": "description of the service", "default": """default_var1: xxx
+        foo, # function which checks vaild input of variables
+        {"desc": "description of the service",
+        "clean": clean,  # function which checks vaild input of variables
+        "default": """default_var1: xxx
     default_var2: 2"""})
 
 Licence
