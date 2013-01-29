@@ -61,14 +61,15 @@ To register new custom service add somewhere in your code:
     from contento.services import services
     
     # request arg is obligatory
-    def foo(request, data):
+    # 
+    def service(request, data):
         # do something...
         return data
    
     # you can set default values too
     # obligatory args: "service name", "function" 
-    services.register("Foo service", 
-        foo, # function which checks vaild input of variables
+    services.register("service name", 
+        service, # function which returns dict with service
         {"desc": "description of the service",
         "clean": clean,  # function which checks vaild input of variables
         "default": """default_var1: xxx
