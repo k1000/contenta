@@ -34,7 +34,7 @@ Add to INSTALLED_APPS in settings.py:
 
 Add to 'urlpatterns' (at the end) urls.py:
     
-    (r'', include('contento.urls')),
+    (r'', include('contenta.urls')),
     
 Create tables etc.:
 
