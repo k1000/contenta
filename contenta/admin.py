@@ -63,7 +63,7 @@ class ContentAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {'fields': (
             ('url', 'parent'),
-            'sites',
+            #'sites',
             'state',
             ('language', 'translation_from'),
             ('created_by', 'created_at', 'modified_at', ))}),
@@ -75,7 +75,7 @@ class ContentAdmin(admin.ModelAdmin):
     )
     readonly_fields = ('url', 'created_by', 'created_at', 'modified_at')
     list_display = ('url', 'title', 'language', 'state', 'created_at')
-    list_filter = ('sites', 'registration_required', "state", "language")
+    list_filter = ('registration_required', "state", "language")
     search_fields = ['url', 'title']
     prepopulated_fields = {"slug": ("title",)}
 

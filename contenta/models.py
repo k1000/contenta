@@ -3,7 +3,7 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 from django.contrib.auth.models import User
-from django.contrib.sites.models import Site
+# from django.contrib.sites.models import Site
 from yamlfield.fields import YAMLField  # https://github.com/datadesk/django-yamlfield
 
 from services import services
@@ -96,7 +96,7 @@ class Page(models.Model):
 youtube:
 iframe:"""))
 
-    sites = models.ManyToManyField(Site)
+    # sites = models.ManyToManyField(Site)
 
     class Meta:
         verbose_name = _('Page')
@@ -114,7 +114,7 @@ iframe:"""))
         return self.url
 
     def get_parents(self):
-        # TODO optymize recrusive
+        # TODO cacheit on root key
         def get_parent(page, parents):
             parent = page.parent
             if parent:
@@ -126,7 +126,10 @@ iframe:"""))
         return get_parent(self, [])[1][::-1]
 
     def get_siblings(self):
-        qs = self.__class__._default_manager.using(self._state.db).filter(parent__exact=self.parent, language__exact=self.language).exclude(pk=self.pk)
+        qs = self.__class__._default_manager.using(self._state.db).filter(
+            parent__exact=self.parent,
+            state__exact=1,
+            language__exact=self.language).exclude(pk=self.pk)
         return list(qs)
 
     def get_translations(self):
