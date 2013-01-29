@@ -4,11 +4,12 @@ Tired of bloated CMS.
 Simple, extendible CMS writen on the top of Django. 
 
 Features:
-* Multilanguage
+* Unlimited pages in tree hierarchy
+* Multilanguage support
 * Rich text editor CKEditor http://ckeditor.com/
-* Easly extendible 
-* Protected pages only for logged users
-* Edit content in place
+* Easily extensible through page services
+* Protected pages visible only for logged users
+* Edit content right on page
 
 Requirements:
 * django-yamlfield
@@ -34,7 +35,7 @@ Add to INSTALLED_APPS in settings.py:
 
 Add to 'urlpatterns' (at the end) urls.py:
     
-    (r'', include('contento.urls')),
+    (r'', include('contenta.urls')),
     
 Create tables etc.:
 
@@ -59,7 +60,7 @@ Variables with prefix of current active language ex: "en" will be set to default
 
 To register new custom service add somewhere in your code:
 
-    from contento.services import services
+    from contenta.services import services
     
     # request arg is obligatory
     # returns dict
