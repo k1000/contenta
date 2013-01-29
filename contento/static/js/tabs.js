@@ -1,6 +1,6 @@
 (function($) {
 	$(document).ready(function() {
-
+		/// preview
 		$(".module.aligned").first().next().after("<div id='preview'></div>");
 		function get_preview(){
 			var url = $('#id_translation_from option:selected').html();
@@ -13,6 +13,19 @@
 		$("#id_translation_from").change(function(){
 			get_preview();
 		});
+
+		/// preview
+		$("#id_parent").next().after("<div id='show_parent_link'></div>");
+		function show_parent_link(){
+			var url = $('#id_parent option:selected').html();
+			$("#show_parent_link").html("Parent url: <a href='"+ url + "' target='blank'>" + url + "</a>" );
+		}
+		show_parent_link();
+		$("#id_parent").change(function(){
+			show_parent_link();
+		});
+
+		// CKEDITOR
 		var editors = [];
 		function set_editor(){
 			$("textarea").each(function(n, obj) {
@@ -25,6 +38,7 @@
 			});
 		}
 
+		
 		$(".field-service select").change(function(){
 			var that = $(this);
 			var service_name = that.val();
