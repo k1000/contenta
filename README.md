@@ -1,13 +1,14 @@
-Contento
+Contenta
 ========
-Django FlatPages on Steroids...
-Simple, extendible CMS writen on Django. 
+Tired of bloated CMS.
+Simple, extendible CMS writen on the top of Django. 
 
 Features:
 * Multilanguage
 * Rich text editor CKEditor http://ckeditor.com/
-* Easly extendible
+* Easly extendible 
 * Protected pages only for logged users
+* Edit content in place
 
 Requirements:
 * django-yamlfield
@@ -23,11 +24,11 @@ Installing
 ----------
 Install via pip:
 
-    pip install -e git+https://github.com/k1000/contento.git#egg=contento
+    pip install -e git+https://github.com/k1000/contenta.git#egg=contenta
 
 Add to INSTALLED_APPS in settings.py:
     
-    'contento',
+    'contenta',
     'sorl.thumbnail',  # *optional
     'filebrowser',  # *optional for CKEditor
 
@@ -81,6 +82,10 @@ To register new custom service add somewhere in your code:
         "return": True,  # optional when when service needs intercepts response and redirects to another url for example
         "default": """default_var1: xxx
     default_var2: 2"""})
+
+TODO
+----
+
 
 Licence
 -------
