@@ -18,6 +18,14 @@
 	{% endfor %}
 </ul>
 
+{% if page.get_translations %}
+<ul class="languages">
+	{% for pag in page.get_translations %}
+	<li><a href="{{ pag.get_absolute_url }}" title="{{ pag.title }}">{{ pag.language }}</a></li>
+	{% endfor %}
+</ul>
+{% endif %}
+
 {% if img %}
 		<figure>
 		<!-- http://proxy.boxresizer.com/convert?resize=650x150&source= -->

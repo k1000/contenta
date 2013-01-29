@@ -133,10 +133,11 @@ iframe:"""))
         translations = []
         # get other translations from translation source
         if self.translation_from:
-            translations = translations + list(self.translation_from.translations.all())
+            translations.append(self.translation_from)
+            translations = translations + list(self.translation_from.translations.exclude(pk=self.pk))
 
         # get other translations
-        translations = translations + list(self.translations.all())
+        translations = translations + list(self.translations.exclude(pk=self.pk))
         return translations
 
     def save(self, *args, **kwargs):
