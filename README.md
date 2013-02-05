@@ -17,7 +17,7 @@ Requirements:
 * django-yamlfield
  
 Optional Requirements:
-* sorl-thumbnail
+* sorl-thumbnail - https://github.com/sorl/sorl-thumbnail
 * filebrowser - for CKEditor https://github.com/wardi/django-filebrowser-no-grappelli.git
 * textile
 * markdown
@@ -31,7 +31,7 @@ Install via pip:
 
     pip install -e git+https://github.com/k1000/contenta.git#egg=contenta
 
-Add to INSTALLED_APPS in settings.py:
+Add to INSTALLED_APPS in settings.py file:
     
     'contenta',
     'sorl.thumbnail',  # *optional
@@ -41,7 +41,7 @@ Add to INSTALLED_APPS in settings.py:
     'docutils', # *optional for rendering markup
     
 
-Add to 'urlpatterns' (at the end) urls.py:
+Add to 'urlpatterns' (at the end) urls.py file:
     
     (r'', include('contenta.urls')),
     
