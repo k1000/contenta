@@ -43,31 +43,28 @@
 
 		// CKEDITOR
 		function set_editor(){
-			$("textarea").each(function(n, obj) {
-				if (obj.id.match(/content/)) {
-					CKEDITOR.replace(obj.id);
-					editors.push(obj);
-					// fck.BasePath = "/static/fckeditor/" ;
-					//fck.ReplaceTextarea() ;
-				}
-			});
+			return CKEDITOR.replace("id_content");
 		}
 
 		if (CKEDITOR) {
-			var editors = [];
+			var editor;
 			CKEDITOR.config.filebrowserBrowseUrl = '/admin/filebrowser/browse?pop=3';
 			var render = $("#id_render_with");
 			if (render.val() == "1"){
-				set_editor();
+				editor = set_editor();
 			}
-
+            
 			render.change( function(){
 				if ($(this).val() == "1"){
-					set_editor();
+				    if (editor){
+				        $("#cke_id_content").show();
+				        $("#id_content").hide()
+				    } else {
+				        editor = set_editor();
+				    }
 				} else {
-					for (var i = editors.length - 1; i >= 0; i--) {
-						CKEDITOR.remove(editors[i]);
-					}
+				    $("#id_content").show().css('visibility', 'visible');
+				    $("#cke_id_content").hide();
 				}
 			});
 		}
