@@ -32,7 +32,8 @@ Install via pip:
     pip install -e git+https://github.com/k1000/contenta.git#egg=contenta
 
 Add to INSTALLED_APPS in settings.py file:
-    
+
+    'django.contrib.staticfiles',
     'contenta',
     'sorl.thumbnail',  # *optional
     'filebrowser',  # *optional for CKEditor
@@ -47,7 +48,17 @@ Add to 'urlpatterns' (at the end) urls.py file:
     
 Create tables etc.:
 
-    python manage.py syncdb
+    ./manage.py syncdb
+    
+Collect static files to static the directory
+    
+    ./manage.py collectstatic
+    
+Configuration
+-------------
+Optionally in settings.py set:
+
+* DEFAULT_RENDERER default to html (1)
 
 Extending
 ---------
