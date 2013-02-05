@@ -88,7 +88,6 @@ services.register("service name",
     service, # function which returns dict with service
     {"desc": "description of the service",
     "clean": clean_service,  # optional function which checks vaild input of variables
-    "return": True,  # optional when when service needs intercepts response and redirects to another url for example
     "default": """default_var1: xxx
 default_var2: 2"""})
 ```
