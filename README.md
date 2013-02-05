@@ -1,7 +1,7 @@
 Contenta
 ========
 Tired of bloated CMS.
-Simple, extendible CMS writen on the top of Django.
+Simple, powerfull, extendible CMS writen on the top of Django.
 
 Tested with django 1.4.3
 
