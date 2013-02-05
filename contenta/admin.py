@@ -21,16 +21,6 @@ class ContentForm(forms.ModelForm):
         self.fields['parent'].queryset = page_choices(self.instance)
         self.fields['translation_from'].queryset = page_choices(self.instance)
 
-    # translation_from = forms.ModelChoiceField(
-    #     queryset=Page.objects.exclude(pk=1),
-    # )
-    #queryset=Area.objects.exclude(area=None)
-    # url = forms.RegexField(label=_("URL"), max_length=100, regex=r'^[-\w/\.~]+$',
-    #     help_text=_("Example: '/about/contact/'. Make sure to have leading"
-    #                   " and trailing slashes."),
-    #     error_message=_("This value must contain only letters, numbers,"
-    #                       " dots, underscores, dashes, slashes or tildes."))
-
     class Meta:
         model = Page
 
@@ -87,11 +77,9 @@ class ContentAdmin(admin.ModelAdmin):
         obj.save()
 
     class Media:
-        css = {"all": ("css/tabs.css",)}
-        js = ["js/tabs.js", "ckeditor/ckeditor.js"]
+        css = {"all": ("css/admin.css",)}
+        js = ["js/admin.js", "ckeditor/ckeditor.js"]
         if "filebrowser" in settings.INSTALLED_APPS:
             js.append("filebrowser/js/FB_CKEditor.js")
 
-
-#admin.site.register(ContentAdmin, ContentForm)
 admin.site.register(Page, ContentAdmin)

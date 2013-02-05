@@ -50,11 +50,11 @@ def page(request, url):
         for service in page_services:
             cur_service = services.get(service.service)
 
-            # shortcircut return for redirect etc
-            if "return" in cur_service[1]:
-                return cur_service[0](request, service.variables)
-
             cur_vars = cur_service[0](request, service.variables)
+
+            # shortcircut return for redirect etc
+            if isinstance(cur_vars, HttpResponse):
+                return cur_vars
 
             # default variables for current language
             if lang in cur_vars:

@@ -14,7 +14,7 @@
 			get_preview();
 		});
 
-		/// preview
+		// show_parent_link
 		$("#id_parent").next().after("<div id='show_parent_link'></div>");
 		function show_parent_link(){
 			var url = $('#id_parent option:selected').html();
@@ -25,20 +25,7 @@
 			show_parent_link();
 		});
 
-		// CKEDITOR
-		var editors = [];
-		function set_editor(){
-			$("textarea").each(function(n, obj) {
-				if (obj.id.match(/content/)) {
-					CKEDITOR.replace(obj.id);
-					editors.push(obj);
-					// fck.BasePath = "/static/fckeditor/" ;
-					//fck.ReplaceTextarea() ;
-				}
-			});
-		}
-
-		
+		// service desription
 		$(".field-service select").change(function(){
 			var that = $(this);
 			var service_name = that.val();
@@ -54,8 +41,20 @@
 			}
 		});
 
+		// CKEDITOR
+		function set_editor(){
+			$("textarea").each(function(n, obj) {
+				if (obj.id.match(/content/)) {
+					CKEDITOR.replace(obj.id);
+					editors.push(obj);
+					// fck.BasePath = "/static/fckeditor/" ;
+					//fck.ReplaceTextarea() ;
+				}
+			});
+		}
+
 		if (CKEDITOR) {
-			// Added by Roger Hu 02/27/2010
+			var editors = [];
 			CKEDITOR.config.filebrowserBrowseUrl = '/admin/filebrowser/browse?pop=3';
 			var render = $("#id_render_with");
 			if (render.val() == "1"){
