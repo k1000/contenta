@@ -23,6 +23,8 @@ Optional Requirements:
 
 Installing
 ----------
+Assuming that you got virtualenv (python virtual envirement) created and activated.
+
 Install via pip:
 
     pip install -e git+https://github.com/k1000/contenta.git#egg=contenta
@@ -32,6 +34,10 @@ Add to INSTALLED_APPS in settings.py:
     'contenta',
     'sorl.thumbnail',  # *optional
     'filebrowser',  # *optional for CKEditor
+    'textile', # *optional for rendering markup
+    'markdown', # *optional for rendering markup
+    'docutils', # *optional for rendering markup
+    
 
 Add to 'urlpatterns' (at the end) urls.py:
     
