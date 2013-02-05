@@ -11,7 +11,7 @@ Features:
 * Rich text editor CKEditor http://ckeditor.com/
 * Easily extensible through page services
 * Protected pages visible only for logged users
-* Edit content right on page
+* Edit content right on page (only for html renderer)
 
 Requirements:
 * django-yamlfield
