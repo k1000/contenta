@@ -20,7 +20,7 @@ setup(
                  'Operating System :: OS Independent',
                  'Programming Language :: Python',
                  'Topic :: Utilities'],
-    install_requires=['django-yamlfield', ],
+    install_requires=['django-yamlfield','textile', 'markdown', 'docutils' ],
     license='BSD',
     test_suite = "contenta.tests",
 )

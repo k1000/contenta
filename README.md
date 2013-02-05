@@ -1,7 +1,9 @@
 Contenta
 ========
 Tired of bloated CMS.
-Simple, extendible CMS writen on the top of Django. 
+Simple, powerfull, extendible CMS writen on the top of Django.
+
+Tested with django 1.4.3
 
 Features:
 * Unlimited pages in tree hierarchy
@@ -15,7 +17,7 @@ Requirements:
 * django-yamlfield
  
 Optional Requirements:
-* sorl-thumbnail
+* sorl-thumbnail - https://github.com/sorl/sorl-thumbnail
 * filebrowser - for CKEditor https://github.com/wardi/django-filebrowser-no-grappelli.git
 * textile
 * markdown
@@ -23,23 +25,40 @@ Optional Requirements:
 
 Installing
 ----------
+Assuming that you got virtualenv (python virtual envirement) created and activated.
+
 Install via pip:
 
     pip install -e git+https://github.com/k1000/contenta.git#egg=contenta
 
-Add to INSTALLED_APPS in settings.py:
-    
+Add to INSTALLED_APPS in settings.py file:
+
+    'django.contrib.staticfiles',
     'contenta',
     'sorl.thumbnail',  # *optional
     'filebrowser',  # *optional for CKEditor
+    'textile', # *optional for rendering markup
+    'markdown', # *optional for rendering markup
+    'docutils', # *optional for rendering markup
+    
 
-Add to 'urlpatterns' (at the end) urls.py:
+Add to 'urlpatterns' (at the end) urls.py file:
     
     (r'', include('contenta.urls')),
     
 Create tables etc.:
 
-    python manage.py syncdb
+    ./manage.py syncdb
+    
+Collect static files to static the directory
+    
+    ./manage.py collectstatic
+    
+Configuration
+-------------
+Optionally in settings.py set:
+
+* DEFAULT_RENDERER default to html (1)
 
 Extending
 ---------
@@ -59,31 +78,30 @@ Example of "variables" field:
 Variables with prefix of current active language ex: "en" will be set to default.
 
 To register new custom service add somewhere in your code:
+```python
+from contenta.services import services
 
-    from contenta.services import services
+# request arg is obligatory
+# returns dict
+def service(request, data):
+    # do something...
+    return data
     
-    # request arg is obligatory
-    # returns dict
-    def service(request, data):
-        # do something...
-        return data
-        
-    # data arg is obligatory
-    # returns str with Error description or None
-    def clean_service(data):
-        # do something...
-        return data
-        
-    # you can set default values too
-    # obligatory args: "service name", "function" 
-    services.register("service name", 
-        service, # function which returns dict with service
-        {"desc": "description of the service",
-        "clean": clean_service,  # optional function which checks vaild input of variables
-        "return": True,  # optional when when service needs intercepts response and redirects to another url for example
-        "default": """default_var1: xxx
-    default_var2: 2"""})
-
+# data arg is obligatory
+# returns str with Error description or None
+def clean_service(data):
+    # do something...
+    return data
+    
+# you can set default values too
+# obligatory args: "service name", "function" 
+services.register("service name", 
+    service, # function which returns dict with service
+    {"desc": "description of the service",
+    "clean": clean_service,  # optional function which checks vaild input of variables
+    "default": """default_var1: xxx
+default_var2: 2"""})
+```
 TODO
 ----
 
