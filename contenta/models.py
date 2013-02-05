@@ -9,6 +9,8 @@ from yamlfield.fields import YAMLField  # https://github.com/datadesk/django-yam
 from services import services
 from django.conf import settings
 
+DEFAULT_RENDERER = getattr(settings, "DEFAULT_RENDERER", 1)
+
 
 class PageManager(models.Manager):
     def active(self):
@@ -31,7 +33,7 @@ class Page(models.Model):
     TEXTILE = 2
     MARKDOWN = 3
     RESTRUCTUREDTEXT = 4
-    MARKUP_CHOICES = (
+    RENDER_CHOICES = (
         (HTML, "html"),
         (TEXTILE, "textile"),
         (MARKDOWN, "markdown"),
@@ -79,8 +81,8 @@ class Page(models.Model):
 
     render_with = models.PositiveSmallIntegerField(_('render with'),
                     blank=True,
-                    choices=MARKUP_CHOICES,
-                    default=1)
+                    choices=RENDER_CHOICES,
+                    default=DEFAULT_RENDERER)
 
     template_name = models.CharField(_('template name'), max_length=70, blank=True,
         help_text=_("Example: 'contenta/contact_page.html'. If this isn't provided, \
