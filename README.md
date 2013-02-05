@@ -105,6 +105,7 @@ default_var2: 2"""})
 TODO
 ----
 
+* Automaticaly detect markup options
 
 Licence
 -------
