@@ -9,7 +9,7 @@ from django.contrib.admin.views.decorators import staff_member_required
 
 from models import Page, services
 
-DEFAULT_TEMPLATE = 'contenta/default.html'
+DEFAULT_TEMPLATE = getattr(settings, 'CONTENTA_DEFAULT_TEMPLATE', 'contenta/default.html')
 
 
 def markup(txt, markupname=0):

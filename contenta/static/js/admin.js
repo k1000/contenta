@@ -53,18 +53,18 @@
 			if (render.val() == "1"){
 				editor = set_editor();
 			}
-            
+			
 			render.change( function(){
 				if ($(this).val() == "1"){
-				    if (editor){
-				        $("#cke_id_content").show();
-				        $("#id_content").hide()
-				    } else {
-				        editor = set_editor();
-				    }
+					if (editor){
+						$("#cke_id_content").show();
+						$("#id_content").hide();
+					} else {
+						editor = set_editor();
+					}
 				} else {
-				    $("#id_content").show().css('visibility', 'visible');
-				    $("#cke_id_content").hide();
+					$("#id_content").show().css('visibility', 'visible');
+					$("#cke_id_content").hide();
 				}
 			});
 		}

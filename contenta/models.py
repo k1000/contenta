@@ -9,7 +9,7 @@ from yamlfield.fields import YAMLField  # https://github.com/datadesk/django-yam
 from services import services
 from django.conf import settings
 
-DEFAULT_RENDERER = getattr(settings, "DEFAULT_RENDERER", 1)
+DEFAULT_RENDERER = getattr(settings, "CONTENTA_DEFAULT_RENDERER", 1)
 
 
 class PageManager(models.Manager):
@@ -82,7 +82,7 @@ class Page(models.Model):
     render_with = models.PositiveSmallIntegerField(_('render with'),
                     blank=True,
                     choices=RENDER_CHOICES,
-                    default=DEFAULT_RENDERER)
+                    default=CONTENTA_DEFAULT_RENDERER)
 
     template_name = models.CharField(_('template name'), max_length=70, blank=True,
         help_text=_("Example: 'contenta/contact_page.html'. If this isn't provided, \

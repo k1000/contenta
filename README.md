@@ -58,7 +58,8 @@ Configuration
 -------------
 Optionally in settings.py set:
 
-* DEFAULT_RENDERER default to html (1)
+* CONTENTA_DEFAULT_RENDERER = html (1)
+* CONTENTA_DEFAULT_TEMPLATE = 'contenta/default.html'
 
 Extending
 ---------
