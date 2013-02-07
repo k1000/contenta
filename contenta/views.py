@@ -102,8 +102,8 @@ def save_content(request, url):
         page = Page.objects.get(url__exact=url)
         page.content = content
         page.save()
-        json = [{"success":True}]
+        success = True
     else:
-        json = [{"success":False}]
+        success = False
 
-    return HttpResponse(json, mimetype='application/json')
+    return HttpResponse([{"success": success}], mimetype='application/json')
