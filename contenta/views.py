@@ -9,8 +9,8 @@ from django.contrib.admin.views.decorators import staff_member_required
 
 from models import Page, services
 
-DEFAULT_TEMPLATE = getattr(settings, 
-    'CONTENTA_DEFAULT_TEMPLATE', 
+DEFAULT_TEMPLATE = getattr(settings,
+    'CONTENTA_DEFAULT_TEMPLATE',
     'contenta/default.html')
 
 
@@ -79,7 +79,7 @@ def render_page(request, url):
 
     context = page(request, url)
     if type(context) is Context:
-        return render(request, 
+        return render(request,
             context['page'].template_name or DEFAULT_TEMPLATE, context)
     else:
         return context
