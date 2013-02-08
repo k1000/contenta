@@ -26,6 +26,13 @@ class ContentForm(forms.ModelForm):
 
 
 class ServiceForm(forms.ModelForm):
+    service = forms.ChoiceField(label="Promotion Type",
+            choices=services.list())
+
+    def __init__(self, *args, **kwargs):
+        super(ServiceForm, self).__init__(*args, **kwargs)
+        self.fields['service'].choices = [("", "------")] + services.list()
+
     def clean(self):
         cleaned_data = super(ServiceForm, self).clean()
         serv = cleaned_data.get("service")

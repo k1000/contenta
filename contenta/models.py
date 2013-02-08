@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-
 from django.contrib.auth.models import User
 # from django.contrib.sites.models import Siteñi
 from yamlfield.fields import YAMLField  # https://github.com/datadesk/django-yamlfield
 
-from services import services
 from django.conf import settings
 
+from services import services
+
 DEFAULT_RENDERER = getattr(settings, "CONTENTA_DEFAULT_RENDERER", 1)
-HELP_TXT_YAML = _("""YAML formated text with variables. http://www.yaml.org/. \
+HELP_TXT_YAML = _("""YAML formated markup. http://www.yaml.org/. \
   eg: img:
 youtube:
 iframe:""")
@@ -49,6 +49,7 @@ class Page(models.Model):
         (2, _("published")),
         (3, _("hidden")),
     )
+
     serv = services  # necessary for admin
 
     created_at = models.DateTimeField(_("created at"), auto_now_add=True)
@@ -165,9 +166,13 @@ class Page(models.Model):
 
 
 class Service(models.Model):
+    def __init__(self, *args, **kwargs):
+        super(Service, self).__init__(*args, **kwargs)
+        #self._meta.get_field_by_name('service')[0]._choices = services.list()
+
     page = models.ForeignKey(Page, related_name="services")
-    service = models.SlugField(_("service"), choices=services.list())
-    variables = YAMLField(_("Variables"),
+    service = models.SlugField(_("service"))
+    variables = YAMLField(_("Parameters"),
         blank=True, null=True,
         db_index=True,
         help_text=HELP_TXT_YAML,

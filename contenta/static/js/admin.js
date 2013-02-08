@@ -26,9 +26,8 @@
 		});
 
 		// service desription
-		$(".field-service select").change(function(){
-			var that = $(this);
-			var service_name = that.val();
+		function set_desc(that){
+		    var service_name = that.val();
 			if (service_name !== null){
 				var serv_desc = window.service_descriptions[service_name];
 				var serv_default = window.service_defaults[service_name];
@@ -39,6 +38,12 @@
 					that.after("<p>"+serv_desc+"</p>");
 				}
 			}
+			return that
+		}
+		$(".field-service select").change(function(){
+			set_desc($(this));
+		}).each( function(){ 
+		    set_desc($(this));
 		});
 
 		// CKEDITOR
