@@ -1,29 +1,49 @@
 {% extends "base.html" %}{% load i18n cache thumbnail %}
 
+{% block head %}
+<head>
+	<nav>
+		<ul class="breadcrumbs">
+		<li class="home">
+			<a href="/">{% trans "home" %}</a>
+		</li>
+		{% for pag in page.get_parents %}
+		<li> 
+			> <a href="{{ pag.get_absolute_url }}">{{ pag.title }}</a>
+		</li>
+		{% endfor %}
+		</ul>
+	</nav>
+	
+	<h1>{{ page.title }}</h1>
+
+	{% if img %}
+		<figure>
+			<img src="{{ img.src }}" alt="{{ page.title }}" width="100%" />
+			{% if img.by %}<figcaption>{% trans "by" %} <em>{{ img.by }}</em></figcaption>{% endif %}
+		</figure>
+	{% endif %}
+
+	{% if page.expert %}
+	<blockquote>
+		{{ page.expert }}
+		{% if cuotecaption %}<figcaption>{{ cuotecaption }}</figcaption>{% endif %}
+	</blockquote>
+	{% endif %}
+</head>
+{% endblock head %}
+
+
 {% block aside %}
-{% endblock aside %}
-
-{% block content %}
-<h1>{{ page.title }}</h1>
-
-<ul class="breadcumbs">
-	{% for pag in page.get_parents %}
-	<li><a href="{{ pag.get_absolute_url }}">{{ pag.title }}</a></li>
-	{% endfor %}
-</ul>
-
 <ul class="siblings">
 	{% for pag in page.get_siblings %}
 	<li><a href="{{ pag.get_absolute_url }}">{{ pag.title }}</a></li>
 	{% endfor %}
 </ul>
+{% endblock aside %}
 
-<ul class="subpages">
-	{% for pag in page.children.all %}
-	<li><a href="{{ pag.get_absolute_url }}">{{ pag.title }}</a></li>
-	{% endfor %}
-</ul>
 
+{% block content %}
 {% if page.get_translations %}
 <ul class="languages">
 	{% for pag in page.get_translations %}
@@ -32,17 +52,16 @@
 </ul>
 {% endif %}
 
-{% if img %}
-		<figure>
-		<!-- http://proxy.boxresizer.com/convert?resize=650x150&source= -->
-		<img src="{{ img.src }}" alt="{{ page.title }}" width="100%" />
-		{% if img.by %}<figcaption>{% trans "by" %} <em>{{ img.by }}</em></figcaption>{% endif %}
-		<figure>
-{% endif %}
 
 	<div class="content{% if user.is_staff and page.render_with == 1 %} editable{% endif %}" lang="{{ LANGUAGE_CODE }}" >
 	{{ page.content_rndr|safe }}
 	</div>
+
+<ul class="subpages">
+	{% for pag in page.children.all %}
+	<li><a href="{{ pag.get_absolute_url }}">{{ pag.title }}</a></li>
+	{% endfor %}
+</ul>
 
 {% if map %}
 	<div id="map_canvas"></div>
