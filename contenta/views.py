@@ -9,7 +9,9 @@ from django.contrib.admin.views.decorators import staff_member_required
 
 from models import Page, services
 
-DEFAULT_TEMPLATE = getattr(settings, 'CONTENTA_DEFAULT_TEMPLATE', 'contenta/default.html')
+DEFAULT_TEMPLATE = getattr(settings,
+        'CONTENTA_DEFAULT_TEMPLATE',
+        'contenta/default.html')
 
 
 def markup(txt, markupname=0):
@@ -77,7 +79,8 @@ def render_page(request, url):
 
     context = page(request, url)
     if type(context) is Context:
-        return render(request, context['page'].template_name or DEFAULT_TEMPLATE, context)
+        return render(request,
+                context['page'].template_name or DEFAULT_TEMPLATE, context)
     else:
         return context
 
@@ -102,8 +105,8 @@ def save_content(request, url):
         page = Page.objects.get(url__exact=url)
         page.content = content
         page.save()
-        json = [{"success":True}]
+        success = True
     else:
-        json = [{"success":False}]
+        success = False
 
-    return HttpResponse(json, mimetype='application/json')
+    return HttpResponse([{"success": success}], mimetype='application/json')
