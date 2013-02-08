@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect, HttpResponse
-from django.template import Context, Template
+from django.template import Context, RequestContext, Template
 from django.conf import settings
 from django.utils import translation
 from django.utils.safestring import mark_safe
@@ -12,6 +12,10 @@ from models import Page, services
 DEFAULT_TEMPLATE = getattr(settings,
         'CONTENTA_DEFAULT_TEMPLATE',
         'contenta/default.html')
+
+EVALUATE_CONTENT = getattr(settings,
+        'CONTENTA_EVALUATE_CONTENT',
+        True)
 
 
 def markup(txt, markupname=0):
@@ -32,7 +36,9 @@ def page(request, url):
     """
 
     """
-    vars = Context()
+    vars = Context(request)
+    vars.update({"EVALUATE_CONTENT": EVALUATE_CONTENT})
+
     if not url.endswith('/') and settings.APPEND_SLASH:
         return HttpResponseRedirect("%s/" % request.path)
     if not url.startswith('/'):
@@ -68,8 +74,10 @@ def page(request, url):
 
             vars.update(cur_vars)
 
+    if EVALUATE_CONTENT:
         t = Template(f.content)
-        f.content_rndr = mark_safe(t.render(vars))
+        content_vars = RequestContext(request, vars)
+        f.content_rndr = mark_safe(t.render(content_vars))
     else:
         f.content_rndr = f.content
 

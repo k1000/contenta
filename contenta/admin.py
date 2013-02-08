@@ -79,6 +79,8 @@ class ContentAdmin(admin.ModelAdmin):
     exclude = ("created_by",)
     inlines = (ServiceInline, )
 
+    save_as = True
+
     def save_model(self, request, obj, form, change):
         obj.created_by = request.user
         obj.save()

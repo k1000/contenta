@@ -11,7 +11,8 @@ Features:
 * Rich text editor CKEditor http://ckeditor.com/
 * Easily extensible through page services
 * Protected pages visible only for logged users
-* Edit content right on page (only for html renderer)
+* Edit content right on page (only for html renderer when CONTENTA_EVALUATE_CONTENT is disabled)
+* Evaluates content which enable aplaying template_tags directly on content
 
 Requirements:
 * django-yamlfield
@@ -60,6 +61,7 @@ Optionally in settings.py set:
 
 * CONTENTA_DEFAULT_RENDERER = 1 (html)
 * CONTENTA_DEFAULT_TEMPLATE = 'contenta/default.html'
+* CONTENTA_EVALUATE_CONTENT = True
 
 Extending
 ---------
