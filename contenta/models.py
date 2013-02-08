@@ -3,13 +3,17 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 from django.contrib.auth.models import User
-# from django.contrib.sites.models import Site
+# from django.contrib.sites.models import Siteñi
 from yamlfield.fields import YAMLField  # https://github.com/datadesk/django-yamlfield
 
 from services import services
 from django.conf import settings
 
 DEFAULT_RENDERER = getattr(settings, "CONTENTA_DEFAULT_RENDERER", 1)
+HELP_TXT_YAML = _("""YAML formated text with variables. http://www.yaml.org/. \
+  eg: img:
+youtube:
+iframe:""")
 
 
 class PageManager(models.Manager):
@@ -82,9 +86,10 @@ class Page(models.Model):
     render_with = models.PositiveSmallIntegerField(_('render with'),
                     blank=True,
                     choices=RENDER_CHOICES,
-                    default=CONTENTA_DEFAULT_RENDERER)
+                    default=DEFAULT_RENDERER)
 
-    template_name = models.CharField(_('template name'), max_length=70, blank=True,
+    template_name = models.CharField(_('template name'),
+        max_length=70, blank=True,
         help_text=_("Example: 'contenta/contact_page.html'. If this isn't provided, \
         the system will use 'contenta/default.html'."))
 
@@ -94,9 +99,7 @@ class Page(models.Model):
     variables = YAMLField(_("Variables"),
         blank=True, null=True,
         db_index=True,
-        help_text=_("""YAML formated text with variables. http://www.yaml.org/. eg: img:
-youtube:
-iframe:"""))
+        help_text=HELP_TXT_YAML)
 
     # sites = models.ManyToManyField(Site)
 
@@ -139,10 +142,10 @@ iframe:"""))
         # get other translations from translation source
         if self.translation_from:
             translations.append(self.translation_from)
-            translations = translations + list(self.translation_from.translations.exclude(pk=self.pk))
+            translations += list(self.translation_from.translations.exclude(pk=self.pk))
 
         # get other translations
-        translations = translations + list(self.translations.exclude(pk=self.pk))
+        translations += list(self.translations.exclude(pk=self.pk))
         return translations
 
     def save(self, *args, **kwargs):
@@ -167,8 +170,6 @@ class Service(models.Model):
     variables = YAMLField(_("Variables"),
         blank=True, null=True,
         db_index=True,
-        help_text=_("""YAML formated text with variables. http://www.yaml.org/. eg: img:
-youtube:
-iframe:"""),
+        help_text=HELP_TXT_YAML,
     )
     #weight = models.PositiveSmallIntegerField(_('weight'), default=1)
