@@ -53,13 +53,9 @@ def page(request, url):
     lang = f.language
     translation.activate(lang)
 
-    # default variables for current language
     cur_vars = f.variables
     if cur_vars:
-        if lang in cur_vars:
-            vars.update(cur_vars[lang])
-        else:
-            vars.update(cur_vars)
+        vars.update(cur_vars)
 
     page_services = f.services.all()
     if page_services:
