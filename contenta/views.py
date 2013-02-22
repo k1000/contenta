@@ -61,13 +61,15 @@ def page(request, url):
     if page_services:
         for service in page_services:
             cur_service = services.get(service.service)
-
-            cur_vars = cur_service[0](request, service.variables)
-
-            # shortcircut return for redirect etc
-            if isinstance(cur_vars, HttpResponse):
-                return cur_vars
-
+            
+            if cur_service:
+                cur_vars = cur_service[0](request, service.variables)
+        
+                # shortcircut return for redirect etc
+                if isinstance(cur_vars, HttpResponse):
+                    return cur_vars
+        
+            
             vars.update(cur_vars)
 
     if EVALUATE_CONTENT:
