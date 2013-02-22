@@ -68,9 +68,8 @@ def page(request, url):
                 # shortcircut return for redirect etc
                 if isinstance(cur_vars, HttpResponse):
                     return cur_vars
-        
-            
-            vars.update(cur_vars)
+
+                vars.update(cur_vars)
 
     if EVALUATE_CONTENT:
         t = Template(f.content)
