@@ -75,7 +75,7 @@ def clean_redirect(data):
 
 services = Services()
 
-services.register("enviroment",
+services.register("environment",
         enviroment,
         {"desc": "variables are added to the context of the template",
         "default": """img: '/'"""})

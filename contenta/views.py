@@ -53,28 +53,26 @@ def page(request, url):
     lang = f.language
     translation.activate(lang)
 
-    # default variables for current language
     cur_vars = f.variables
     if cur_vars:
-        if lang in cur_vars:
-            vars.update(cur_vars[lang])
-        else:
-            vars.update(cur_vars)
+        vars.update(cur_vars)
 
     page_services = f.services.all()
     if page_services:
         for service in page_services:
             cur_service = services.get(service.service)
 
-            cur_vars = cur_service[0](request, service.variables)
+            if cur_service:
+                cur_vars = cur_service[0](request, service.variables)
 
-            # shortcircut return for redirect etc
-            if isinstance(cur_vars, HttpResponse):
-                return cur_vars
+                # shortcircut return for redirect etc
+                if isinstance(cur_vars, HttpResponse):
+                    return cur_vars
 
-            vars.update(cur_vars)
+                vars.update(cur_vars)
 
-    if EVALUATE_CONTENT:
+    # if we have services or/and variables we will evaluate content
+    if page_services and cur_vars:
         t = Template(f.content)
         content_vars = RequestContext(request, vars)
         f.content_rndr = mark_safe(t.render(content_vars))

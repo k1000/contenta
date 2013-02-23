@@ -63,38 +63,29 @@ Optionally in settings.py set:
 * CONTENTA_DEFAULT_TEMPLATE = 'contenta/default.html'
 * CONTENTA_EVALUATE_CONTENT = True
 
-Ussage
+Usage
 ------
+Info about usage in https://github.com/k1000/contenta/wiki/Contenta-Usage
 
 Accepted variables for page template.
+
 Example:
-    img:
-        src:
-        by:
-    map:
-        lat:
-        lng:
-    youtube:
-    iframe: 
-
-
+```yaml
+img:
+    src: http://justforpaws.co.uk//wp-content/uploads/2012/08/CatSitting1.jpg
+    by: anonymous
+map:
+    lat: 12.145943
+    lng: -86.263123
+    name: 13A Avenida SE, Managua
+youtube: _eXO7hrq2AY
+iframe: http://news.ycombinator.com/ 
+```
 
 Extending
 ---------
 You can extend functionality of the page by registering services and then selecting them in admin panel.
-You can pass arbitrary additional variables to the service introducing YAML (http://www.yaml.org/) formatted text in "variables" field.
-
-Example of "variables" field:
-
-    img:
-      src: https://www.dzogchen.de/Resources/ssi-logo.gif
-    youtube: 8CMlxwvjFEU
-    en: 
-      tags: web, web developement
-    es:
-      tags: web, desarrolo web 
-    
-Variables with prefix of current active language ex: "en" will be set to default.
+You can pass arbitrary additional parameters to the service introducing YAML (http://www.yaml.org/) formatted text in "parameters" field.
 
 To register new custom service add somewhere in your code:
 ```python
