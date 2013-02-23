@@ -63,7 +63,7 @@ Optionally in settings.py set:
 * CONTENTA_DEFAULT_TEMPLATE = 'contenta/default.html'
 * CONTENTA_EVALUATE_CONTENT = True
 
-Ussage
+Usage
 ------
 
 Accepted variables for page template.
@@ -78,13 +78,10 @@ map:
     lng: -86.263123
     name: 13A Avenida SE, Managua
 youtube: _eXO7hrq2AY
-iframe: http://news.ycombinator.com/
-en: 
-    tags: web, web developement
-es:
-    tags: web, desarrolo web 
+iframe: http://news.ycombinator.com/ 
 ```
 Variables with prefix of current active language ex: "en" will be set to default.
+More abou usage in https://github.com/k1000/contenta/wiki/Contenta-Usage
 
 Extending
 ---------
