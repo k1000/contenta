@@ -63,6 +63,22 @@ Optionally in settings.py set:
 * CONTENTA_DEFAULT_TEMPLATE = 'contenta/default.html'
 * CONTENTA_EVALUATE_CONTENT = True
 
+Ussage
+------
+
+Accepted variables for page template.
+Example:
+    img:
+        src:
+        by:
+    map:
+        lat:
+        lng:
+    youtube:
+    iframe: 
+
+
+
 Extending
 ---------
 You can extend functionality of the page by registering services and then selecting them in admin panel.

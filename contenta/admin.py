@@ -26,7 +26,7 @@ class ContentForm(forms.ModelForm):
 
 
 class ServiceForm(forms.ModelForm):
-    service = forms.ChoiceField(label="Promotion Type",
+    service = forms.ChoiceField(label="Service",
             choices=services.list())
 
     def __init__(self, *args, **kwargs):
