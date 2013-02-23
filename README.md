@@ -65,6 +65,7 @@ Optionally in settings.py set:
 
 Usage
 ------
+Info about usage in https://github.com/k1000/contenta/wiki/Contenta-Usage
 
 Accepted variables for page template.
 
@@ -80,8 +81,6 @@ map:
 youtube: _eXO7hrq2AY
 iframe: http://news.ycombinator.com/ 
 ```
-Variables with prefix of current active language ex: "en" will be set to default.
-More abou usage in https://github.com/k1000/contenta/wiki/Contenta-Usage
 
 Extending
 ---------
