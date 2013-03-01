@@ -1,0 +1,515 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: django contenta\n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: contenta/admin.py:68
+msgid "Advanced options"
+msgstr "Erweiterte Optionen"
+
+#: contenta/models.py:13
+msgid "YAML formated markup. http://www.yaml.org/.   eg: img:\n"
+"youtube:\n"
+"iframe:"
+msgstr "YAML formatierte Markup. http://www.yaml.org/. zB: img:\n"
+"youtube:\n"
+"iframe:"
+
+#: contenta/models.py:48
+msgid "darft"
+msgstr "darft"
+
+#: contenta/models.py:49
+msgid "published"
+msgstr "veröffentlicht"
+
+#: contenta/models.py:50
+msgid "hidden"
+msgstr "versteckt"
+
+#: contenta/models.py:55
+msgid "created at"
+msgstr "erstellt am"
+
+#: contenta/models.py:56
+msgid "modified at"
+msgstr "geändert am"
+
+#: contenta/models.py:57
+msgid "created by"
+msgstr "erstellt von"
+
+#: contenta/models.py:59
+msgid "state"
+msgstr "Zustand"
+
+#: contenta/models.py:62
+msgid "URL"
+msgstr "URL"
+
+#: contenta/models.py:67
+msgid "parent"
+msgstr "Elternteil"
+
+#: contenta/models.py:71
+msgid "language"
+msgstr "Sprache"
+
+#: contenta/models.py:77
+msgid "translated from"
+msgstr "übersetzt aus"
+
+#: contenta/models.py:82
+msgid "title"
+msgstr "Titel"
+
+#: contenta/models.py:83
+msgid "Used in the URL of the entry"
+msgstr "Wird in der URL des Eintrags"
+
+#: contenta/models.py:84
+msgid "aside"
+msgstr "beiseite"
+
+#: contenta/models.py:85
+msgid "content"
+msgstr "Inhalt"
+
+#: contenta/models.py:87
+msgid "render with"
+msgstr "machen mit"
+
+#: contenta/models.py:92
+msgid "template name"
+msgstr "Template-Namen"
+
+#: contenta/models.py:94
+msgid "Example: 'contenta/contact_page.html'. If this isn't provided,         the system will use 'contenta/default.html'."
+msgstr "Beispiel: 'contenta / contact_page.html'. Wenn diese nicht vorhanden ist, verwendet das System 'contenta / default.html \"."
+
+#: contenta/models.py:97
+msgid "registration required"
+msgstr "Anmeldung erforderlich"
+
+#: contenta/models.py:98
+msgid "If this is checked, only logged-in users will be able to view the page."
+msgstr "Wenn diese Option aktiviert ist, nur angemeldete Benutzer können die Seite anzuzeigen."
+
+#: contenta/models.py:100
+msgid "Variables"
+msgstr "Variablen"
+
+#: contenta/models.py:108
+msgid "Page"
+msgstr "Seite"
+
+#: contenta/models.py:109
+msgid "Pages"
+msgstr "Seiten"
+
+#: contenta/models.py:174
+msgid "service"
+msgstr "Service"
+
+#: contenta/models.py:175
+msgid "Parameters"
+msgstr "Parameter"
+
+#: contenta/templates/admin/contenta/page/change_form.html:29
+#: src/filebrowser/filebrowser/templates/filebrowser/include/breadcrumbs.html:5
+msgid "Home"
+msgstr "Zuhause"
+
+#: contenta/templates/admin/contenta/page/change_form.html:32
+msgid "Add"
+msgstr "Hinzufügen"
+
+#: contenta/templates/admin/contenta/page/change_form.html:42
+msgid "History"
+msgstr "Geschichte"
+
+#: contenta/templates/admin/contenta/page/change_form.html:43
+msgid "View on site"
+msgstr "Blick auf Website"
+
+#: contenta/templates/admin/contenta/page/change_form.html:54
+msgid "Please correct the error below."
+msgid_plural "Please correct the errors below."
+msgstr[0] "Bitte korrigieren Sie den Fehler unten."
+msgstr[1] ""
+
+#: contenta/templates/contenta/default.html:8
+msgid "home"
+msgstr "Zuhause"
+
+#: contenta/templates/contenta/default.html:23
+msgid "by"
+msgstr "durch"
+
+#: contenta/templatetags/content.py:70
+msgid "%(tag_name)s expects a syntax of %(tag_name)s ['url_starts_with'] [for user] as context_name"
+msgstr "% (Tag_name) s erwartet einen Syntax% (tag_name) s ['url_starts_with'] [für Benutzer] als context_name"
+
+#: src/filebrowser/filebrowser/fields.py:58
+msgid "Extension %(ext)s is not allowed. Only %(allowed)s is allowed."
+msgstr "Extension% (ext) s ist nicht erlaubt. Nur% (erlaubt) s erlaubt."
+
+#: src/filebrowser/filebrowser/forms.py:26
+#: src/filebrowser/filebrowser/templates/filebrowser/versions.html:63
+msgid "Name"
+msgstr "Name"
+
+#: src/filebrowser/filebrowser/forms.py:26
+#: src/filebrowser/filebrowser/forms.py:32
+#: src/filebrowser/filebrowser/forms.py:49
+#: src/filebrowser/filebrowser/forms.py:55
+msgid "Only letters, numbers, underscores, spaces and hyphens are allowed."
+msgstr "Nur Buchstaben, Zahlen, Unterstriche, Leerzeichen und Bindestriche sind erlaubt."
+
+#: src/filebrowser/filebrowser/forms.py:35
+#: src/filebrowser/filebrowser/forms.py:58
+msgid "The Folder already exists."
+msgstr "Der Ordner ist bereits vorhanden."
+
+#: src/filebrowser/filebrowser/forms.py:49
+msgid "New Name"
+msgstr "Neuer Name"
+
+#: src/filebrowser/filebrowser/forms.py:60
+msgid "The File already exists."
+msgstr "Die Datei existiert bereits."
+
+#: src/filebrowser/filebrowser/settings.py:122
+msgid "Folder"
+msgstr "Mappe"
+
+#: src/filebrowser/filebrowser/settings.py:123
+msgid "Image"
+msgstr "Bild"
+
+#: src/filebrowser/filebrowser/settings.py:124
+msgid "Video"
+msgstr "Video"
+
+#: src/filebrowser/filebrowser/settings.py:125
+msgid "Document"
+msgstr "Dokument"
+
+#: src/filebrowser/filebrowser/settings.py:126
+msgid "Audio"
+msgstr "Audio-"
+
+#: src/filebrowser/filebrowser/settings.py:127
+msgid "Code"
+msgstr "Code"
+
+#: src/filebrowser/filebrowser/views.py:72
+#: src/filebrowser/filebrowser/views.py:182
+#: src/filebrowser/filebrowser/views.py:238
+#: src/filebrowser/filebrowser/views.py:336
+#: src/filebrowser/filebrowser/views.py:414
+#: src/filebrowser/filebrowser/views.py:475
+msgid "The requested Folder does not exist."
+msgstr "Die angeforderte Ordner existiert nicht."
+
+#: src/filebrowser/filebrowser/views.py:76
+msgid "Error finding Upload-Folder. Maybe it does not exist?"
+msgstr "Fehler finden Upload-Ordner. Vielleicht ist es gar nicht existiert?"
+
+#: src/filebrowser/filebrowser/views.py:159
+#: src/filebrowser/filebrowser/templates/filebrowser/append.html:5
+#: src/filebrowser/filebrowser/templates/filebrowser/append.html:7
+#: src/filebrowser/filebrowser/templates/filebrowser/include/breadcrumbs.html:8
+#: src/filebrowser/filebrowser/templates/filebrowser/include/breadcrumbs.html:10
+msgid "FileBrowser"
+msgstr "FileBrowser"
+
+#: src/filebrowser/filebrowser/views.py:201
+msgid "The Folder %s was successfully created."
+msgstr "Der Ordner% s wurde erfolgreich erstellt."
+
+#: src/filebrowser/filebrowser/views.py:210
+msgid "Permission denied."
+msgstr "Permission denied."
+
+#: src/filebrowser/filebrowser/views.py:212
+msgid "Error creating folder."
+msgstr "Fehler beim Erstellen des Ordners."
+
+#: src/filebrowser/filebrowser/views.py:219
+#: src/filebrowser/filebrowser/views.py:222
+#: src/filebrowser/filebrowser/templates/filebrowser/index.html:48
+msgid "New Folder"
+msgstr "Neuer Ordner"
+
+#: src/filebrowser/filebrowser/views.py:248
+msgid "Select files to upload"
+msgstr "Dateien zum Upload auswählen"
+
+#: src/filebrowser/filebrowser/views.py:252
+#: src/filebrowser/filebrowser/templates/filebrowser/index.html:49
+#: src/filebrowser/filebrowser/templates/filebrowser/upload.html:112
+msgid "Upload"
+msgstr "Laden"
+
+#: src/filebrowser/filebrowser/views.py:338
+#: src/filebrowser/filebrowser/views.py:416
+#: src/filebrowser/filebrowser/views.py:477
+msgid "The requested File does not exist."
+msgstr "Die angeforderte Datei existiert nicht."
+
+#: src/filebrowser/filebrowser/views.py:363
+msgid "The file %s was successfully deleted."
+msgstr "Die Datei% s wurde erfolgreich gelöscht."
+
+#: src/filebrowser/filebrowser/views.py:379
+msgid "The folder %s was successfully deleted."
+msgstr "Der Ordner% s wurde erfolgreich gelöscht."
+
+#: src/filebrowser/filebrowser/views.py:443
+msgid "Renaming was successful."
+msgstr "Umbenennen erfolgreich war."
+
+#: src/filebrowser/filebrowser/views.py:448
+msgid "Error."
+msgstr "Error."
+
+#: src/filebrowser/filebrowser/views.py:456
+msgid "Rename \"%s\""
+msgstr "Benennen Sie \"% s\""
+
+#: src/filebrowser/filebrowser/views.py:459
+#: src/filebrowser/filebrowser/templates/filebrowser/include/filelisting.html:86
+msgid "Rename"
+msgstr "Umbenennen"
+
+#: src/filebrowser/filebrowser/views.py:485
+#: src/filebrowser/filebrowser/views.py:488
+msgid "Versions for \"%s\""
+msgstr "Versionen für \"% s\""
+
+#: src/filebrowser/filebrowser/templates/filebrowser/makedir.html:24
+#: src/filebrowser/filebrowser/templates/filebrowser/rename.html:25
+msgid "Please correct the following errors."
+msgstr "Bitte korrigieren Sie die folgenden Fehler."
+
+#: src/filebrowser/filebrowser/templates/filebrowser/makedir.html:33
+#: src/filebrowser/filebrowser/templates/filebrowser/upload.html:102
+msgid "The Name will be converted to lowercase. Spaces will be replaced with underscores."
+msgstr "Der Name wird in Kleinbuchstaben umgewandelt werden. Leerzeichen werden durch Unterstriche ersetzt werden."
+
+#: src/filebrowser/filebrowser/templates/filebrowser/makedir.html:39
+#: src/filebrowser/filebrowser/templates/filebrowser/rename.html:36
+msgid "Submit"
+msgstr "Einreichen"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/upload.html:48
+msgid "BROWSE"
+msgstr "Durchblättern"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/upload.html:49
+msgid "An Error occured"
+msgstr "Ein Fehler ist aufgetreten"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/upload.html:50
+msgid "Completed"
+msgstr "Fertiggestellt"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/upload.html:51
+msgid "Do you want to replace the file"
+msgstr "Wollen Sie die Datei zu ersetzen"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/upload.html:52
+msgid "KB"
+msgstr "KB"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/upload.html:53
+msgid "MB"
+msgstr "MB"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/upload.html:86
+msgid "Help"
+msgstr "Hilfe"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/upload.html:90
+msgid "Allowed"
+msgstr "Erlaubt"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/upload.html:96
+msgid "Max. Filesize"
+msgstr "Max. Dateigröße"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/upload.html:110
+msgid "Clear Queue"
+msgstr "Clear Queue"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/versions.html:66
+msgid "Image Version"
+msgstr "Image Version"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/versions.html:69
+msgid "Debug"
+msgstr "Debuggen"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/versions.html:83
+#: src/filebrowser/filebrowser/templates/filebrowser/versions.html:95
+#: src/filebrowser/filebrowser/templates/filebrowser/versions.html:107
+#: src/filebrowser/filebrowser/templates/filebrowser/include/filelisting.html:11
+#: src/filebrowser/filebrowser/templates/filebrowser/include/filelisting.html:23
+#: src/filebrowser/filebrowser/templates/filebrowser/include/filelisting.html:35
+msgid "Select"
+msgstr "Wählen"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/versions.html:118
+msgid "Width"
+msgstr "Breite"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/versions.html:119
+msgid "Height"
+msgstr "Höhe"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/include/filelisting.html:50
+msgid "View Image"
+msgstr "Bild anzeigen"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/include/filelisting.html:73
+msgid "Versions"
+msgstr "Versionen"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/include/filelisting.html:92
+msgid "Are you sure you want to delete this file?"
+msgstr "Sind Sie sicher, dass Sie diese Datei löschen?"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/include/filelisting.html:92
+msgid "Delete File"
+msgstr "Datei löschen"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/include/filelisting.html:95
+msgid "Are you sure you want to delete this Folder?"
+msgstr "Sind Sie sicher, dass Sie diesen Ordner löschen?"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/include/filelisting.html:95
+msgid "Delete Folder"
+msgstr "Ordner löschen"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/include/filter.html:3
+msgid "Filter"
+msgstr "Filtern"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/include/filter.html:9
+msgid "By Date"
+msgstr "Nach Datum"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/include/filter.html:11
+msgid "Any Date"
+msgstr "Beliebiges Datum"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/include/filter.html:13
+msgid "Today"
+msgstr "Heute"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/include/filter.html:15
+msgid "Past 7 days"
+msgstr "Letzten 7 Tage"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/include/filter.html:17
+msgid "Past 30 days"
+msgstr "Letzten 30 Tagen"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/include/filter.html:19
+msgid "This year"
+msgstr "Dieses Jahr"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/include/filter.html:27
+msgid "By Type"
+msgstr "Nach Typ"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/include/filter.html:29
+msgid "All"
+msgstr "Alle"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/include/paginator.html:5
+msgid "No Items Found"
+msgstr "Keine Artikel gefunden"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/include/paginator.html:11
+msgid "%(counter)s Item"
+msgid_plural "%(counter)s Items"
+msgstr[0] "% (Counter) s Artikel"
+msgstr[1] ""
+
+#: src/filebrowser/filebrowser/templates/filebrowser/include/paginator.html:26
+msgid "No Items"
+msgstr "Keine Artikel"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/include/search.html:3
+msgid "1 result"
+msgid_plural "%(counter)s results"
+msgstr[0] "1 Ergebnis"
+msgstr[1] ""
+
+#: src/filebrowser/filebrowser/templates/filebrowser/include/search.html:4
+#: src/filebrowser/filebrowser/templates/filebrowser/include/toolbar.html:19
+msgid "%(full_result_count)s total"
+msgstr "% (Full_result_count) s insgesamt"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/include/search.html:5
+msgid "Clear Restrictions"
+msgstr "Klare Einschränkungen"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/include/search.html:7
+#: src/filebrowser/filebrowser/templates/filebrowser/include/toolbar.html:16
+msgid "Search"
+msgstr "Suchen"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/include/search.html:19
+msgid "Go"
+msgstr "Gehen"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/include/search.html:24
+msgid "%(counter)s Item found"
+msgid_plural "%(counter)s Items found"
+msgstr[0] "% (Counter) s Artikel gefunden"
+msgstr[1] ""
+
+#: src/filebrowser/filebrowser/templates/filebrowser/include/search.html:25
+msgid "%(counter)s Item total"
+msgid_plural "%(counter)s Items total"
+msgstr[0] "% (Counter) s Artikel insgesamt"
+msgstr[1] ""
+
+#: src/filebrowser/filebrowser/templates/filebrowser/include/tableheader.html:9
+#: src/filebrowser/filebrowser/templates/filebrowser/include/tableheader.html:10
+msgid "Type"
+msgstr "Typ"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/include/tableheader.html:12
+msgid "Thumbnail"
+msgstr "Daumennagel"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/include/tableheader.html:14
+#: src/filebrowser/filebrowser/templates/filebrowser/include/tableheader.html:15
+msgid "Filename"
+msgstr "Dateiname"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/include/tableheader.html:17
+#: src/filebrowser/filebrowser/templates/filebrowser/include/tableheader.html:18
+msgid "Size"
+msgstr "Größe"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/include/tableheader.html:20
+#: src/filebrowser/filebrowser/templates/filebrowser/include/tableheader.html:21
+msgid "Date"
+msgstr "Datum"
+
+#: src/filebrowser/filebrowser/templates/filebrowser/include/toolbar.html:19
+msgid "%(counter)s result"
+msgid_plural "%(counter)s results"
+msgstr[0] "% (Counter) s Ergebnis"
+msgstr[1] ""
+
