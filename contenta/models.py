@@ -77,11 +77,20 @@ class Page(models.Model):
         verbose_name=_("translated from"),
         blank=True, null=True,
         db_index=True,
+        help_text=_("")
     )
 
     title = models.CharField(_("title"), max_length=250)
-    slug = models.SlugField(_("Used in the URL of the entry"), max_length=250)
-    expert = models.TextField(_("aside"), blank=True, null=True)
+    slug = models.SlugField(_("identificator"), max_length=250,
+        help_text=_('Used to build URL string'))
+    expert = models.TextField(_("expert"),
+            blank=True, null=True,
+            help_text=_('page expert or quote')
+    )
+    img = models.ImageField(_("main image"),
+        blank=True, null=True,
+        upload_to="uploads/contenta")
+
     content = models.TextField(_("content"))
 
     render_with = models.PositiveSmallIntegerField(_('render with'),
