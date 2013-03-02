@@ -85,8 +85,7 @@ services.register("redirect",
         {"desc": "redirects page to new url. ex: url: /admin/",
         "url": "/admin/",
         "default": "url: '/'",
-        "clean": clean_redirect,
-        "return": True})
+        "clean": clean_redirect})
 
 services.register("pages",
         get_pages,
