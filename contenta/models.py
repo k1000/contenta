@@ -60,6 +60,7 @@ class Page(models.Model):
         choices=STATES, default=1, db_index=True)
 
     url = models.CharField(_('URL'),
+        unique=True,
         blank=True, null=True,
         max_length=100, db_index=True)
     parent = models.ForeignKey("Page",
@@ -77,7 +78,7 @@ class Page(models.Model):
         verbose_name=_("translated from"),
         blank=True, null=True,
         db_index=True,
-        help_text=_("")
+        help_text=_("points to the page which is source of translation")
     )
 
     title = models.CharField(_("title"), max_length=250)
