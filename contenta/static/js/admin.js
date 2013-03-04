@@ -75,5 +75,16 @@
 				}
 			});
 		}
+		// list templates
+		var options = "";
+		$.each(window.available_templates, function(index, value) {
+		    options += "<option>"+ value + "</option>";
+		})
+		var template_name = $("#id_template_name")
+		    .after("<select id='available_templates'>"+ options + "</select>");
+		$("#available_templates").change( function(){
+	       template_name.val($(this).val());
+	   })
+		
 	});
 })(django.jQuery);

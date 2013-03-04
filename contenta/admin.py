@@ -1,10 +1,21 @@
+import os
+
 from django import forms
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
+from django.conf import settings
 
 from models import Page, Service
 from services import services
+
 from settings import *
+
+
+def get_template_names():
+    templates = []
+    tmpl_dir = os.path.join(settings.TEMPLATE_DIRS[0], "contenta")
+    os.chdir(tmpl_dir)
+    return templates + ["contenta/%s" % files for files in os.listdir(".") if files.endswith(".html")]
 
 
 def page_choices(instance):
@@ -87,6 +98,12 @@ class ContentAdmin(admin.ModelAdmin):
     def save_model(self, request, obj, form, change):
         obj.created_by = request.user
         obj.save()
+
+    def change_view(self, request, object_id, form_url='', extra_context=None):
+        extra_context = extra_context or {}
+        extra_context['available_templates'] = get_template_names()
+        extra_context['services'] = services
+        return super(ContentAdmin, self).change_view(request, object_id, form_url, extra_context=extra_context)
 
     class Media:
         css = {"all": ("css/admin.css",)}
