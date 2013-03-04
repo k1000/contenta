@@ -54,6 +54,8 @@
 		if (CKEDITOR) {
 			var editor;
 			CKEDITOR.config.filebrowserBrowseUrl = '/admin/filebrowser/browse?pop=3';
+			CKEDITOR.config.protectedSource.push( /'"/g );   // quotes for django tags
+			CKEDITOR.config.entities = false;
 			var render = $("#id_render_with");
 			if (render.val() == "1"){
 				editor = set_editor();

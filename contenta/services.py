@@ -42,6 +42,14 @@ def enviroment(request, data):
     return data
 
 
+def extra(request, data):
+    """
+    Very simple service just takes row data
+    from input and injects them to the template as 'extra'
+    """
+    return {"extra": data}
+
+
 def redirect(request, data):
     """
     Very simple service just takes variables
@@ -74,6 +82,11 @@ def clean_redirect(data):
         return None
 
 services = Services()
+
+services.register("extra",
+        extra,
+        {"desc": "raw content of parameters field is added as 'extra' variable"})
+
 
 services.register("environment",
         enviroment,

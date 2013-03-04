@@ -30,7 +30,6 @@ def page(request, url):
 
     """
     vars = Context(request)
-    vars.update({"EVALUATE_CONTENT": EVALUATE_CONTENT})
 
     if not url.endswith('/') and settings.APPEND_SLASH:
         return HttpResponseRedirect("%s/" % request.path)
