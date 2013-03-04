@@ -74,7 +74,7 @@ class Page(models.Model):
         verbose_name=_("translated from"),
         blank=True, null=True,
         db_index=True,
-        help_text=_("points to the page which is source of translation")
+        help_text=_("points to the page which is the source of translation")
     )
 
     title = models.CharField(_("title"), max_length=250)
