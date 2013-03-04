@@ -8,14 +8,7 @@ from django.shortcuts import render
 from django.contrib.admin.views.decorators import staff_member_required
 
 from models import Page, services
-
-DEFAULT_TEMPLATE = getattr(settings,
-        'CONTENTA_DEFAULT_TEMPLATE',
-        'contenta/default.html')
-
-EVALUATE_CONTENT = getattr(settings,
-        'CONTENTA_EVALUATE_CONTENT',
-        True)
+from settings import *
 
 
 def markup(txt, markupname=0):

@@ -4,7 +4,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from models import Page, Service
 from services import services
-from django.conf import settings
+from settings import *
 
 
 def page_choices(instance):
@@ -58,12 +58,11 @@ class ContentAdmin(admin.ModelAdmin):
     form = ContentForm
 
     fieldsets = (
-        (None, {'fields': (
+        (None, {'fields': [
             ('url', 'parent'),
-            #'sites',
             'state',
             ('language', 'translation_from'),
-            ('created_by', 'created_at', 'modified_at', ))}),
+            ('created_by', 'created_at', 'modified_at', )]}),
         (None, {'fields': ('title', 'slug', 'img', 'expert', 'content')}),
         (_('Advanced options'),
             {'classes': ('collapse',),
@@ -71,10 +70,14 @@ class ContentAdmin(admin.ModelAdmin):
         ),
     )
     readonly_fields = ('url', 'created_by', 'created_at', 'modified_at')
-    list_display = ('url', 'title', 'language', 'state', 'created_at')
-    list_filter = ('registration_required', "state", "language")
+    list_display = ['url', 'title', 'language', 'state', 'created_at']
+    list_filter = ['registration_required', "state", "language"]
     search_fields = ['url', 'title']
     prepopulated_fields = {"slug": ("title",)}
+
+    if MULTISITE:
+        fieldsets[0][1]['fields'].insert(1, 'sites')
+        list_filter.append("sites")
 
     exclude = ("created_by",)
     inlines = (ServiceInline, )
@@ -88,7 +91,7 @@ class ContentAdmin(admin.ModelAdmin):
     class Media:
         css = {"all": ("css/admin.css",)}
         js = ["js/admin.js", "ckeditor/ckeditor.js"]
-        if "filebrowser" in settings.INSTALLED_APPS:
-            js.append("filebrowser/js/FB_CKEditor.js")
+        if FILEBROWSER_URL:
+            js.append(FILEBROWSER_URL)
 
 admin.site.register(Page, ContentAdmin)

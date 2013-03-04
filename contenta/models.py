@@ -2,18 +2,14 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
-# from django.contrib.sites.models import Siteñi
+
 from yamlfield.fields import YAMLField  # https://github.com/datadesk/django-yamlfield
 
-from django.conf import settings
-
 from services import services
+from settings import *
 
-DEFAULT_RENDERER = getattr(settings, "CONTENTA_DEFAULT_RENDERER", 1)
-HELP_TXT_YAML = _("""YAML formated markup. http://www.yaml.org/. \
-  eg: img:
-youtube:
-iframe:""")
+if MULTISITE:
+    from django.contrib.sites.models import Site
 
 
 class PageManager(models.Manager):
@@ -112,7 +108,8 @@ class Page(models.Model):
         db_index=True,
         help_text=HELP_TXT_YAML)
 
-    # sites = models.ManyToManyField(Site)
+    if MULTISITE:
+        sites = models.ManyToManyField(Site)
 
     class Meta:
         verbose_name = _('Page')
