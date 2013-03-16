@@ -2,26 +2,17 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
+# from django.core.cache import cache
+
 
 from yamlfield.fields import YAMLField  # https://github.com/datadesk/django-yamlfield
 
 from services import services
 from settings import *
+from manager import PageManager
 
 if MULTISITE:
     from django.contrib.sites.models import Site
-
-
-class PageManager(models.Manager):
-    def active(self):
-        return super(PageManager, self).get_query_set().filter(state=2)
-
-    def siblings(self, page):  # TODO
-        if page.parent:
-            return self.active().filter(parent__pk=page.parent.pk)
-
-    def same_template(self, template_name):
-        return self.active().filter(template_name__exact=template_name)
 
 
 class Page(models.Model):
@@ -117,8 +108,12 @@ class Page(models.Model):
         ordering = ('url',)
         get_latest_by = "publication_date"
 
-    def get_vars(self):
-        return self.variables.to_python()
+    @classmethod
+    def active_pages_dict(cls, **filter):
+        return dict(cls.objects.active().values_list("url", "title", "parent__url"))
+
+    def get_parents_from_url(self, url=None):
+        return (url or self.url).split("/")[1:-2]
 
     def __unicode__(self):
         return self.url
@@ -138,12 +133,32 @@ class Page(models.Model):
 
         return get_parent(self, [])[1][::-1]
 
+    def get_descendants(self):
+        def get_childern(page, descendants):
+            children = page.children
+            if children:
+                for child in children:
+                    descendants.append(page, get_childern(child, descendants))
+                return descendants
+            else:
+                return []
+
+        return get_childern(self, [])[1][::-1]
+
     def get_siblings(self):
         qs = self.__class__._default_manager.using(self._state.db).filter(
             parent__exact=self.parent,
             state__exact=1,
             language__exact=self.language).exclude(pk=self.pk)
+
         return list(qs)
+
+    def is_root(self):
+        """Return ``True`` if the page is the root page."""
+        if self.parent:
+            return False
+        else:
+            return True
 
     def get_translations(self):
         translations = []

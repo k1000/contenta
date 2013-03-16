@@ -96,4 +96,28 @@ def get_pages(parser, token):
     else:
         raise template.TemplateSyntaxError(syntax_message)
 
+
+class MenuNode(template.Node):
+    def __init__(self, context_name, root_url, lang=None):
+        self.context_name = context_name
+        # if root_url:
+        #     self.root_url = template.Variable(starts_with)
+        # else:
+        #     self.starts_with = None
+        # if user:
+        #     self.lang = template.Variable(user)
+        # else:
+        #     self.user = None
+
+    def render(self, context):
+        
+        return ''
+
+
+def get_menu(parser, token):
+    """
+    
+    """
+
+register.tag('get_menu', get_menu)
 register.tag('get_pages', get_pages)
