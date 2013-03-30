@@ -19,7 +19,7 @@
 
 	{% if img %}
 		<figure>
-			<img src="{{ img.src }}" alt="{{ page.title }}" width="100%" />
+			<img src="{{ STATIC_URL}}{{ img.src }}" alt="{{ page.title }}" width="100%" />
 			{% if img.by %}<figcaption>{% trans "by" %} <em>{{ img.by }}</em></figcaption>{% endif %}
 		</figure>
 	{% endif %}
