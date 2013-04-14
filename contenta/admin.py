@@ -74,7 +74,7 @@ class ContentAdmin(admin.ModelAdmin):
             'state',
             ('language', 'translation_from'),
             ('created_by', 'created_at', 'modified_at', )]}),
-        (None, {'fields': ('title', 'slug', 'img', 'expert', 'content')}),
+        (None, {'fields': ('title', 'slug', ('menu_title', 'weight'), 'img', 'expert', 'content')}),
         (_('Advanced options'),
             {'classes': ('collapse',),
             'fields': ('registration_required', 'render_with', 'template_name', 'variables')}

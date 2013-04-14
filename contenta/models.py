@@ -69,6 +69,12 @@ class Page(models.Model):
     )
 
     title = models.CharField(_("title"), max_length=250)
+    menu_title = models.CharField(_("menu title"), max_length=30,
+        help_text=_('used in menus'))
+    weight = models.PositiveSmallIntegerField(_('menu weight'),
+        default=1, db_index=True,
+        help_text=_('determinates order in menu. Beiger weight = higher position in menu'))
+
     slug = models.SlugField(_("identificator"), max_length=250,
         help_text=_('Used to build URL string'))
     expert = models.TextField(_("expert"),
@@ -146,7 +152,7 @@ class Page(models.Model):
             else:
                 return [page, []]
         ch = get_childern(self, [])[1][::-1]
-        import ipdb; ipdb.set_trace()
+        # import ipdb; ipdb.set_trace()
         return ch
 
     def get_siblings(self):
