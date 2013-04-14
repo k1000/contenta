@@ -133,17 +133,21 @@ class Page(models.Model):
 
         return get_parent(self, [])[1][::-1]
 
-    def get_descendants(self):
+    def get_descendants(self, condition=None):
         def get_childern(page, descendants):
-            children = page.children
+            if condition:
+                return
+            children = page.children.all()
             if children:
+                kids = []
                 for child in children:
-                    descendants.append(page, get_childern(child, descendants))
-                return descendants
+                    kids.append(get_childern(child, descendants))
+                return [page, kids]
             else:
-                return []
-
-        return get_childern(self, [])[1][::-1]
+                return [page, []]
+        ch = get_childern(self, [])[1][::-1]
+        import ipdb; ipdb.set_trace()
+        return ch
 
     def get_siblings(self):
         qs = self.__class__._default_manager.using(self._state.db).filter(
