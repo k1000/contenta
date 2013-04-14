@@ -1,0 +1,297 @@
+
+Running on profile "webfaction" at MY_ROOT /home/dzogchen/webapps/django1_4/dzogchen
+
+
+Running on profile "webfaction" at MY_ROOT /home/dzogchen/webapps/django1_4/dzogchen
+
+[
+    {
+        "pk": 13, 
+        "model": "contenta.page", 
+        "fields": {
+            "variables": null, 
+            "render_with": 1, 
+            "translation_from": null, 
+            "language": "de", 
+            "parent": null, 
+            "title": "AGB", 
+            "url": "/agb/", 
+            "template_name": "", 
+            "created_at": "2013-03-30T19:15:52.478", 
+            "img": "", 
+            "modified_at": "2013-04-04T23:12:01.770", 
+            "created_by": 78, 
+            "content": "<p>Allgemeine Gesch&auml;ftsbedingungen der Dzogchen Gemeinschaft Deutschland e.V.<br />\n(im weiteren DGD)<br />\n<br />\n<strong>&sect;1 Geltung der AGB</strong><br />\n(1) Die Allgemeinen Gesch&auml;ftsbedingungen gelten f&uuml;r alle Vertr&auml;ge zwischen uns und dem Vertragspartner (Unternehmer oder Verbraucher) in ihrer zum Zeitpunkt des Vertragsabschlusses g&uuml;ltigen Fassung.<br />\n(2) &bdquo;Verbraucher&ldquo; in Sinne dieser Gesch&auml;ftsbedingungen ist jede nat&uuml;rliche Person, die ein Rechtsgesch&auml;ft zu einem Zwecke abschlie&szlig;t, der weder ihrer gewerblichen noch ihrer selbst&auml;ndigen beruflichen T&auml;tigkeit zugerechnet werden kann.<br />\n<br />\n<strong>&sect;2 Zustandekommen eines Vertrages, Speicherung des Vertragstextes</strong><br />\n(1) Die folgenden Regelungen &uuml;ber den Vertragsabschluss gelten f&uuml;r Bestellungen &uuml;ber unsere Website http://www.dzogchen.de .<br />\n<br />\n(2) Im Falle des Vertragsschlusses kommt der Vertrag mit<br />\nDzogchen Gemeinschaft Deutschland e.V., vertreten durch den Vorstand, zustande.<br />\n<br />\nGesch&auml;ftsstelle: Ilka M&uuml;ller-Mennrich<br />\nZum Schluchtor 15<br />\nD-40883 Ratingen<br />\nRegisternummer VR 8986 B<br />\nRegistergericht Amtsgericht Berlin</p>\n\n<p>(3) Bestellungen von Waren im Webshop<br />\nDie Pr&auml;sentation der Waren in unserem Internetshop stellen kein rechtlich bindendes Vertragsangebot unsererseits dar, sondern sind nur eine unverbindliche Aufforderungen an den Verbraucher, Waren zu bestellen. Mit der Bestellung der gew&uuml;nschten Ware gibt der Verbraucher ein f&uuml;r ihn verbindliches Angebot auf Abschluss eines Kaufvertrages ab.<br />\nDie Annahme des Angebots erfolgt in Textform oder durch &Uuml;bersendung der bestellten Ware innerhalb von zwei Wochen. Nach fruchtlosem Ablauf der Frist gilt das Angebot als abgelehnt.<br />\n(3.1) Bei Eingang einer Bestellung in unserem Internetshop gelten folgende Regelungen: Der Verbraucher gibt ein bindendes Vertragsangebot ab, indem er die in unserem Internetshop vorgesehene Bestellprozedur erfolgreich durchl&auml;uft.<br />\nDie Bestellung erfolgt in folgenden Schritten:<br />\n1) Auswahl der gew&uuml;nschten Ware<br />\n2) Best&auml;tigen durch Anklicken der Buttons &bdquo;Bestellen&ldquo;<br />\n3) Pr&uuml;fung der Angaben im Warenkorb<br />\n4) Bet&auml;tigung des Buttons &bdquo;zur Kasse&ldquo;<br />\n5) Anmeldung im Internetshop nach Registrierung und Eingabe der Anmelderangaben (E-Mail-Adresse und Passwort).<br />\n6) Nochmalige Pr&uuml;fung bzw. Berichtigung der jeweiligen eingegebenen Daten.<br />\n3.2) Verbindliche Absendung der Bestellung.<br />\nDer Verbraucher kann vor dem verbindlichen Absenden der Bestellung durch Bet&auml;tigen der in dem von ihm verwendeten Internet-Browser enthaltenen &bdquo;Zur&uuml;ck&ldquo;-Taste nach Kontrolle seiner Angaben wieder zu der Internetseite gelangen, auf der die Angaben des Kunden erfasst werden und Eingabefehler berichtigen bzw. durch Schlie&szlig;en des Internetbrowsers den Bestellvorgang abbrechen. Wir best&auml;tigen den Eingang der Bestellung unmittelbar durch eine automatisch generierte E-Mail (Eingangsbest&auml;tigung). Diese stellt noch keine Annahme des Angebotes dar. Die Annahme des Angebots erfolgt schriftlich, in Textform oder durch &Uuml;bersendung der bestellten Ware innerhalb 2 Wochen.<br />\n(3.3) Speicherung des Vertragstextes bei Bestellungen &uuml;ber unseren Internetshop : Wir senden Ihnen die Bestelldaten und unsere AGB per E-Mail zu. Die AGB k&ouml;nnen Sie jederzeit auch unter http://www.dzogchen.de/agb.html einsehen. Ihre Bestelldaten sind aus Sicherheitsgr&uuml;nden nicht mehr &uuml;ber das Internet zug&auml;nglich.<br />\n<br />\n(4) Buchung von Veranstaltungen, Ticketing<br />\n(4.1) Der Kunde erwirbt beim Online-Ticketing Bezugsscheine f&uuml;r von der DGD herausgegebene Eintrittskarten f&uuml;r von der DGD durchgef&uuml;hrte Veranstaltungen.<br />\n(4.2) Bei einer Buchung von Tickets &uuml;ber das Online-Ticketing-System geht das Angebot f&uuml;r den Vertragsschluss vom Kunden aus. Vor Absendung des Angebots erh&auml;lt der Kunde die M&ouml;glichkeit, s&auml;mtliche Angaben (z.B. Name, Anschrift, Zahlungsart und bestellte Artikel) nochmals zu &uuml;berpr&uuml;fen und ggf. zu &auml;ndern.\u2028Nach Abschluss des Bestellvorgangs und nochmaliger Pr&uuml;fung der Angaben gibt der Kunde ein rechtsverbindliches Angebot zum Abschluss eines Vertrages durch Ausl&ouml;sung des Button &quot;Buchung&quot; ab. Sofern DGD das Angebot des Kunden annimmt, best&auml;tigt sie dies durch eine E-Mail, welche gleichzeitig die Angebotsannahme darstellt und die Abholnummer enth&auml;lt. F&uuml;r die Annahmeerkl&auml;rung gilt eine Frist von 3 Tagen nach Eingang des Angebots.<br />\n(4.3) Es erfolgt kein Versand von Karten. Gekaufte bzw. reservierte Eintrittskarten werden vom Kunden an der Abendkasse abgeholt. Dabei ist eine Legitimierung durch eine entsprechende Abholnummer notwendig.<br />\n(4.4) Die vom Kunden erworbene Eintrittskarte berechtigt lediglich und ausschlie&szlig;lich zum Besuch der auf der Karte ausgedruckten Veranstaltung zu dem angegebenen Termin. Zum Einlass berechtigen grunds&auml;tzlich nur die von DGD ausgegebenen Eintrittskarten. Weitere Leistungen sind, soweit diese nicht auf der Eintrittskarte vermerkt sind, im Kartenpreis nicht enthalten.<br />\n(4.5) Bei Verlust der Eintrittskarte nach Abholung wird von DGD kein Ersatz geleistet.<br />\n<br />\n<strong>&sect;3 Preise, Versandkosten, Zahlung</strong><br />\n(1) Die angegebenen Preise enthalten die gesetzliche Umsatzsteuer. Hinzu kommen die Kosten f&uuml;r die Versendung der Waren.<br />\n(2) Der Verbraucher hat die M&ouml;glichkeit der Zahlung per Vorkasse oder PayPal.<br />\n(3) Hat der Verbraucher die Zahlung per Vorkasse gew&auml;hlt, so verpflichtet er sich, den Kaufpreis unverz&uuml;glich nach Vertragsschluss zu zahlen.<br />\n<br />\n<strong>&sect;4 Lieferung</strong><br />\n(1) Sofern wir dies in der Produktbeschreibung nicht deutlich anders angegeben haben, sind alle von uns angebotenen Artikel versandfertig.<br />\n(2) Hat der Verbraucher die Zahlung per Vorkasse gew&auml;hlt, so versenden wir die Ware sofort nach Geldeingang.<br />\n(3) Im &uuml;brigen hat die Zahlung unverz&uuml;glich nach Rechnungszugang zu erfolgen.<br />\n<br />\n<strong>&sect;5 Eigentumsvorbehalt</strong><br />\nWir behalten uns das Eigentum an der Ware bis zur vollst&auml;ndigen Bezahlung des Kaufpreises vor.<br />\n<br />\n<strong>&sect;6 Widerrufsrecht</strong><br />\n<strong>Widerrufsbelehrung</strong><br />\n<br />\nWiderrufsrecht<br />\nSie k&ouml;nnen Ihre Vertragserkl&auml;rung innerhalb von 14 Tagen ohne Angabe von Gr&uuml;nden in Textform (z. B. Brief, Fax, E-Mail) oder &ndash; wenn Ihnen die Sache vor Fristablauf &uuml;berlassen wird &ndash; auch durch R&uuml;cksendung der Sache widerrufen. Die Frist beginnt nach Erhalt dieser Belehrung in Textform, jedoch nicht vor Eingang der Ware beim Empf&auml;nger (bei der wiederkehrenden Lieferung gleichartiger Waren nicht vor Eingang der ersten Teillieferung) und auch nicht vor Erf&uuml;llung unserer Informationspflichten gem&auml;&szlig; Artikel 246 &sect; 2 in Verbindung mit &sect; 1 Abs. 1 und 2 EGBGB sowie unserer Pflichten gem&auml;&szlig; &sect; 312g Abs. 1 Satz 1 BGB in Verbindung mit Artikel 246 &sect; 3 EGBGB. Zur Wahrung der Widerrufsfrist gen&uuml;gt die rechtzeitige Absendung des Widerrufs oder der Sache.<br />\n<br />\nDer Widerruf ist zu richten an:<br />\nDzogchen Gemeinschaft Deutschland e.V.<br />\nGesch&auml;ftsstelle: Ilka M&uuml;ller-Mennrich<br />\nZum Schluchtor 15<br />\nD-40883 Ratingen<br />\nE-Mail shop@dzogchen.de<br />\n<br />\nWiderrufsfolgen<br />\nIm Falle eines wirksamen Widerrufs sind die beiderseits empfangenen Leistungen zur&uuml;ckzugew&auml;hren und ggf. gezogene Nutzungen (z. B. Zinsen) herauszugeben. K&ouml;nnen Sie uns die empfangene Leistung sowie Nutzungen (z. B. Gebrauchsvorteile) nicht oder teilweise nicht oder nur in verschlechtertem Zustand zur&uuml;ckgew&auml;hren beziehungsweise herausgeben, m&uuml;ssen Sie uns insoweit Wertersatz leisten. F&uuml;r die Verschlechterung der Sache und f&uuml;r gezogene Nutzungen m&uuml;ssen Sie Wertersatz nur leisten, soweit die Nutzungen oder die Verschlechterung auf einen Umgang mit der Sache zur&uuml;ckzuf&uuml;hren ist, der &uuml;ber die Pr&uuml;fung der Eigenschaften und der Funktionsweise hinausgeht. Unter &bdquo;Pr&uuml;fung der Eigenschaften und der Funktionsweise&ldquo; versteht man das Testen und Ausprobieren der jeweiligen Ware, wie es etwa im Ladengesch&auml;ft m&ouml;glich und &uuml;blich ist.<br />\nPaketversandf&auml;hige Sachen sind auf unsere Gefahr zur&uuml;ckzusenden. Sie haben die regelm&auml;&szlig;igen Kosten der R&uuml;cksendung zu tragen, wenn die gelieferte Ware der bestellten entspricht und wenn der Preis der zur&uuml;ckzusendenden Sache einen Betrag von 40 Euro nicht &uuml;bersteigt oder wenn Sie bei einem h&ouml;heren Preis der Sache zum Zeitpunkt des Widerrufs noch nicht die Gegenleistung oder eine vertraglich vereinbarte Teilzahlung erbracht haben. Anderenfalls ist die R&uuml;cksendung f&uuml;r Sie kostenfrei. Nicht paketversandf&auml;hige Sachen werden bei Ihnen abgeholt. Verpflichtungen zur Erstattung von Zahlungen m&uuml;ssen innerhalb von 30 Tagen erf&uuml;llt werden. Die Frist beginnt f&uuml;r Sie mit der Absendung Ihrer Widerrufserkl&auml;rung oder der Sache, f&uuml;r uns mit deren Empfang.<br />\n<br />\n<strong>&sect;7 Mangelhaftigkeit der Ware</strong><br />\nSollte die gelieferte Ware M&auml;ngel aufweisen, so gelten die gesetzlichen Bestimmungen der &sect;&sect; 434ff BGB.<br />\n<br />\n<strong>&sect;8 Vertragsprache</strong><br />\nAls Vertragssprache steht ausschlie&szlig;lich Deutsch zur Verf&uuml;gung.<br />\n<br />\n<strong>&sect;9 Kundendienst</strong><br />\nUnsere Gesch&auml;ftsstelle steht Ihnen an folgenden Terminen zur Verf&uuml;gung:<br />\nMo 18:00 bis 20:00, Mi + Fr 11:00 bis 13:00\u2028Tel. 02102-844850\u2028\u2028office@dzogchen.de<br />\n<br />\n<strong>&sect;10 Hinweise zum Datenschutz</strong><br />\n(1) DGD erhebt im Zusammenhang mit dem Verkauf personenbezogene Daten nur im technisch notwendigen Umfang.<br />\nDie Daten werden nur im technisch notwendigen Umfang gespeichert.<br />\n(2) DGD sichert zu, die Daten nur mit ausdr&uuml;cklicher Zustimmung des Kunden zum Zwecke der &Uuml;bermittlung von veranstaltungsspezifischen Informationen oder von Informationen, welche k&uuml;nftige Vertragsabschl&uuml;sse ber&uuml;hren (z.B. &Auml;nderungen und/oder Erg&auml;nzungen zu diesen Allgemeinen Gesch&auml;ftsbedingungen), zu nutzen.<br />\n(3) Eine Weitergabe der Daten an Dritte, insbesondere auch zum Zwecke der Werbung, erfolgt nicht.<br />\n(4) Der Kunde hat jederzeit das Recht auf Auskunft &uuml;ber die bez&uuml;glich seiner Person gespeicherten Daten.<br />\n<br />\nStand der AGB M&auml;rz 2013</p>\n\n<p>&nbsp;</p>\n\n<hr />\n<p>&nbsp;</p>\n\n<p>Gratis AGB erstellt von agb.de diente als Grundlage f&uuml;r die Erstellung dieser AGB.</p>\n", 
+            "state": 2, 
+            "registration_required": false, 
+            "slug": "agb", 
+            "expert": ""
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "contenta.page", 
+        "fields": {
+            "variables": null, 
+            "render_with": 1, 
+            "translation_from": 6, 
+            "language": "de", 
+            "parent": null, 
+            "title": "Ch\u00f6gyal Namkhai Norbu Berlin 2013", 
+            "url": "/retreat2013/", 
+            "template_name": "", 
+            "created_at": "2013-03-08T17:46:34.184", 
+            "img": "uploads/contenta/ChNN2_1.jpg", 
+            "modified_at": "2013-04-08T16:47:28.186", 
+            "created_by": 78, 
+            "content": "<p style=\"margin: 0px; line-height: normal; font-family: Helvetica; \"><strong>30. August bis 1. September 2013</strong></p>\r\n\r\n<p style=\"margin: 0px; line-height: normal; font-family: Helvetica; \">Maritim Hotel Berlin</p>\r\n\r\n<p style=\"margin: 0px; line-height: normal; font-family: Helvetica; \">Stauffenbergstr. 26 (N\u00e4he Potsdamer Platz)</p>\r\n\r\n<p style=\"margin: 0px; line-height: normal; font-family: Helvetica; \">10785 Berlin</p>\r\n", 
+            "state": 2, 
+            "registration_required": false, 
+            "slug": "retreat2013", 
+            "expert": "Alle sprechen immer davon, dass wir Frieden brauchen und ohne Frieden kein Gl\u00fcck finden k\u00f6nnen. Aber wie kann es Frieden geben? Frieden wird es nur durch die Entwicklung des Individuums geben. Was bedeutet \u00bbEntwicklung\u00ab? Entwicklung hei\u00dft, dass wir \u00fcber unseren Zustand und unsere Umst\u00e4nde Bescheid wissen \u2013 und wie viele verschiedene Arten von Begrenzungen wir jeweils haben. Sind wir durch die Begrenzungen nicht konditioniert, dann gelangen wir schlie\u00dflich zu unserer wirklichen Natur. Das ist das Prinzip der Dzogchen-Lehre."
+        }
+    }, 
+    {
+        "pk": 14, 
+        "model": "contenta.page", 
+        "fields": {
+            "variables": null, 
+            "render_with": 1, 
+            "translation_from": 7, 
+            "language": "de", 
+            "parent": 12, 
+            "title": "Anmeldung", 
+            "url": "/retreat2013/anmeldung/", 
+            "template_name": "registration/registration.html", 
+            "created_at": "2013-04-04T21:26:33.721", 
+            "img": "uploads/contenta/thumb_0_250_1600_1256_530_0_607_custom_521_186_rounded_1.png", 
+            "modified_at": "2013-04-08T16:47:28.192", 
+            "created_by": 78, 
+            "content": "<p>Herzlich willkommen!</p>\r\n", 
+            "state": 2, 
+            "registration_required": false, 
+            "slug": "anmeldung", 
+            "expert": ""
+        }
+    }, 
+    {
+        "pk": 15, 
+        "model": "contenta.page", 
+        "fields": {
+            "variables": null, 
+            "render_with": 1, 
+            "translation_from": 9, 
+            "language": "de", 
+            "parent": 12, 
+            "title": "Unterbringung", 
+            "url": "/retreat2013/unterbringung/", 
+            "template_name": "", 
+            "created_at": "2013-04-04T22:27:20.761", 
+            "img": "uploads/contenta/yogi_1.jpg", 
+            "modified_at": "2013-04-08T18:58:31.163", 
+            "created_by": 78, 
+            "content": "<p>Das Maritim Hotel bietet reduzierte Preise f\u00fcr Retreat-Teilnehmer.<br />\r\n<a href=\"https://secure.netbookerng.com/singleShopper.jsp?acctid=5459535&amp;promocode=DZO300813&amp;language=de-DE\" target=\"_blank\">\u00dcber diesen Link</a> kommen Sie direkt in das Buchungs-System (\u00f6ffnet eine neue Seite).<br />\r\nBitte beachten Sie auch m\u00f6gliche Sonderangebote \u00fcber das <a href=\"http://www.maritim.de/de/hotels/deutschland/hotel-berlin/gaestezimmer-im-ueberblick\" target=\"_blank\">regul\u00e4re System</a>.<br />\r\n<br />\r\nWir werden bald weitere Unterbringungsm\u00f6glichkeiten in allen Preisklassen erg\u00e4nzen\u2026</p>\r\n", 
+            "state": 2, 
+            "registration_required": false, 
+            "slug": "unterbringung", 
+            "expert": ""
+        }
+    }, 
+    {
+        "pk": 16, 
+        "model": "contenta.page", 
+        "fields": {
+            "variables": null, 
+            "render_with": 1, 
+            "translation_from": 11, 
+            "language": "de", 
+            "parent": 12, 
+            "title": "Werden Sie Helfer", 
+            "url": "/retreat2013/werden-sie-helfer/", 
+            "template_name": "", 
+            "created_at": "2013-04-04T22:43:27.702", 
+            "img": "uploads/contenta/IMG_2652-2_.jpg", 
+            "modified_at": "2013-04-08T17:05:30.206", 
+            "created_by": 78, 
+            "content": "<p>Wir ben\u00f6tigen viele freiwillige Helfer.<br />\r\nWenn Sie einsteigen m\u00f6chten, tragen Sie sich bitte hier in die Liste ein. Sie sind herzlich willkommen.<br />\r\n<br />\r\nM\u00f6gliche Bereiche sind zum Beispiel: <em>Aufbau, Anmeldung, B\u00fcchertisch, Saalordner, Sicherheit, Ganapuja, B\u00fcro, Kinderbetreuung, Photographie, Technik, Reinigung</em>.&nbsp;</p>\r\n\r\n<form action=\"/karmayoga/\" id=\"karmayoga_form\" method=\"post\">\r\n<ul>\r\n\t<li><label for=\"id_first_name\">Vorname:</label> <input id=\"id_first_name\" maxlength=\"250\" name=\"first_name\" type=\"text\" /></li>\r\n\t<li><label for=\"id_family_name\">Nachname:</label> <input id=\"id_family_name\" maxlength=\"250\" name=\"family_name\" type=\"text\" /></li>\r\n\t<li><label for=\"id_email\">Email:</label> <input id=\"id_email\" maxlength=\"75\" name=\"email\" type=\"text\" /></li>\r\n\t<li><label for=\"id_tel\">Tel:</label> <input id=\"id_tel\" maxlength=\"10\" name=\"tel\" type=\"text\" /></li>\r\n\t<li><label for=\"id_disponibility_from\">Verf\u00fcgbar ab:</label> <input class=\"datepicker hasDatepicker\" id=\"id_disponibility_from\" name=\"disponibility_from\" type=\"text\" /></li>\r\n\t<li><label for=\"id_disponibility_untill\">Verf\u00fcgbar bis:</label> <input class=\"datepicker hasDatepicker\" id=\"id_disponibility_untill\" name=\"disponibility_untill\" type=\"text\" /></li>\r\n\t<li><label for=\"id_observations\">Erfahrungen:</label><textarea cols=\"40\" id=\"id_observations\" name=\"observations\" rows=\"10\"></textarea></li>\r\n</ul>\r\n</form>\r\n", 
+            "state": 2, 
+            "registration_required": false, 
+            "slug": "werden-sie-helfer", 
+            "expert": ""
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "contenta.page", 
+        "fields": {
+            "variables": "img:/Resources/contenta/ChNN-indicating.jpeg cuotecaption:Ch\u00f6gyal Namkhai Norbu - Berlin 2013", 
+            "render_with": 1, 
+            "translation_from": null, 
+            "language": "en", 
+            "parent": null, 
+            "title": "Ch\u00f6gyal Namkhai Norbu Berlin 2013", 
+            "url": "/retreat2013_engl/", 
+            "template_name": "", 
+            "created_at": "2013-02-08T11:40:33.540", 
+            "img": "uploads/contenta/ChNN2.jpg", 
+            "modified_at": "2013-04-04T23:45:15.614", 
+            "created_by": 78, 
+            "content": "<p style=\"margin: 0px; line-height: normal; font-family: Helvetica; \"><strong>August 30 to&nbsp;September 1, 2013</strong></p>\n\n<p style=\"margin: 0px; line-height: normal; font-family: Helvetica; \">Maritim Hotel Berlin</p>\n\n<p style=\"margin: 0px; line-height: normal; font-family: Helvetica; \">Stauffenbergstr. 26 (near Potsdamer Platz)</p>\n\n<p style=\"margin: 0px; line-height: normal; font-family: Helvetica; \">10785 Berlin / Germany</p>\n", 
+            "state": 2, 
+            "registration_required": false, 
+            "slug": "retreat2013_engl", 
+            "expert": "Everybody always says we need peace and if there is no peace we cannot find happiness. But how can we have peace? There will only be peace when there is the evolution of the individual. What does evolution mean? Evolution means that we know how our condition is and how many different kinds of limitations we have relatively. If we are not conditioned by them, it means finally we are getting into our real nature. This is the principle of the Dzogchen teaching."
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "contenta.page", 
+        "fields": {
+            "variables": null, 
+            "render_with": 1, 
+            "translation_from": null, 
+            "language": "en", 
+            "parent": 6, 
+            "title": "Accomodation", 
+            "url": "/retreat2013_engl/accomodation/", 
+            "template_name": "", 
+            "created_at": "2013-02-08T16:27:41.275", 
+            "img": "uploads/contenta/yogi_1_1.jpg", 
+            "modified_at": "2013-04-08T16:51:41.361", 
+            "created_by": 78, 
+            "content": "<p>The Hotel Maritim offers reduced prizes for the retreat participants.<br />\r\n<a href=\"https://secure.netbookerng.com/singleShopper.jsp?acctid=5459535&amp;promocode=DZO300813\" target=\"_blank\">This link</a> leads into their booking system (opening new page).<br />\r\n<br />\r\nWe will soon add more locations in all price classes\u2026</p>\r\n\r\n<p>&nbsp;</p>\r\n", 
+            "state": 2, 
+            "registration_required": false, 
+            "slug": "accomodation", 
+            "expert": ""
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "contenta.page", 
+        "fields": {
+            "variables": null, 
+            "render_with": 1, 
+            "translation_from": null, 
+            "language": "en", 
+            "parent": 6, 
+            "title": "Become Helper", 
+            "url": "/retreat2013_engl/become-helper/", 
+            "template_name": "", 
+            "created_at": "2013-02-08T16:29:51.764", 
+            "img": "uploads/contenta/IMG_2652-2__1.jpg", 
+            "modified_at": "2013-04-08T16:59:50.832", 
+            "created_by": 78, 
+            "content": "<p>We need many helpers. If you would like to join the team, please register.<br />\nBasic knowledge of German is helpful.</p>\n\n<div>\n<form action=\"/karmayoga/\" id=\"karmayoga_form\" method=\"post\">\n<ul>\n\t<li><label for=\"id_first_name\">First name:</label> <input id=\"id_first_name\" maxlength=\"250\" name=\"first_name\" type=\"text\" /></li>\n\t<li><label for=\"id_family_name\">Family name:</label> <input id=\"id_family_name\" maxlength=\"250\" name=\"family_name\" type=\"text\" /></li>\n\t<li><label for=\"id_email\">Email:</label> <input id=\"id_email\" maxlength=\"75\" name=\"email\" type=\"text\" /></li>\n\t<li><label for=\"id_tel\">Tel:</label> <input id=\"id_tel\" maxlength=\"10\" name=\"tel\" type=\"text\" /></li>\n\t<li><label for=\"id_disponibility_from\">Available from date:</label> <input class=\"datepicker hasDatepicker\" id=\"id_disponibility_from\" name=\"disponibility_from\" type=\"text\" /></li>\n\t<li><label for=\"id_disponibility_untill\">Available until:</label> <input class=\"datepicker hasDatepicker\" id=\"id_disponibility_untill\" name=\"disponibility_untill\" type=\"text\" /></li>\n\t<li><label for=\"id_observations\">Experiences:</label><textarea cols=\"40\" id=\"id_observations\" name=\"observations\" rows=\"10\"></textarea></li>\n</ul>\n</form>\n</div>\n", 
+            "state": 2, 
+            "registration_required": false, 
+            "slug": "become-helper", 
+            "expert": ""
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "contenta.page", 
+        "fields": {
+            "variables": null, 
+            "render_with": 1, 
+            "translation_from": null, 
+            "language": "en", 
+            "parent": 6, 
+            "title": "Booking", 
+            "url": "/retreat2013_engl/booking/", 
+            "template_name": "registration/registration.html", 
+            "created_at": "2013-02-08T16:22:38.168", 
+            "img": "uploads/contenta/thumb_0_250_1600_1256_530_0_607_custom_521_186_rounded_2.png", 
+            "modified_at": "2013-04-08T17:08:11.050", 
+            "created_by": 78, 
+            "content": "<p>Welcome!</p>\r\n", 
+            "state": 2, 
+            "registration_required": false, 
+            "slug": "booking", 
+            "expert": ""
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "contenta.page", 
+        "fields": {
+            "variables": null, 
+            "render_with": 1, 
+            "translation_from": null, 
+            "language": "en", 
+            "parent": 6, 
+            "title": "Program", 
+            "url": "/retreat2013_engl/program/", 
+            "template_name": "", 
+            "created_at": "2013-02-08T16:26:25.453", 
+            "img": "uploads/contenta/thumb_0_250_1600_1256_530_0_607_custom_521_186_rounded.png", 
+            "modified_at": "2013-04-04T23:55:27.979", 
+            "created_by": 78, 
+            "content": "<p>Here comes program</p>\r\n", 
+            "state": 1, 
+            "registration_required": false, 
+            "slug": "program", 
+            "expert": ""
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "contenta.page", 
+        "fields": {
+            "variables": null, 
+            "render_with": 1, 
+            "translation_from": null, 
+            "language": "en", 
+            "parent": 6, 
+            "title": "Service", 
+            "url": "/retreat2013_engl/service/", 
+            "template_name": "", 
+            "created_at": "2013-02-08T16:28:55.426", 
+            "img": "", 
+            "modified_at": "2013-04-04T23:45:15.636", 
+            "created_by": 78, 
+            "content": "<p>\u00b7 Arrival<br />\r\n\u00b7 Public transport<br />\r\n\u00b7 Sightseeing<br />\r\n\u00b7 Events</p>\r\n\r\n<p>&nbsp;</p>\r\n", 
+            "state": 3, 
+            "registration_required": false, 
+            "slug": "service", 
+            "expert": ""
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "contenta.service", 
+        "fields": {
+            "variables": "{'event_slug': 'berlin-retreat-2013'}", 
+            "page": 14, 
+            "service": "registration"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "contenta.service", 
+        "fields": {
+            "variables": "berlin-retreat", 
+            "page": 11, 
+            "service": "karmayoga_form"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "contenta.service", 
+        "fields": {
+            "variables": "berlin-retreat", 
+            "page": 16, 
+            "service": "karmayoga_form"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "contenta.service", 
+        "fields": {
+            "variables": "{'event_slug': 'berlin-retreat-2013'}", 
+            "page": 7, 
+            "service": "registration"
+        }
+    }
+]
