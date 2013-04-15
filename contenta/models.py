@@ -127,6 +127,19 @@ class Page(models.Model):
     def get_absolute_url(self):
         return self.url
 
+    def get_root(self):
+        """get root page based on first url element"""
+
+        def _get_root(self):
+            parent_slugs = self.url.split("/")[1:-1]
+            if len(parent_slugs) == 1:
+                return self
+            else:
+                return Page.objects.get(slug=parent_slugs[0])
+
+        self._root = getattr(self, "_root", _get_root(self))
+        return self._root
+
     def get_parents(self):
         # TODO cacheit on root key
         def get_parent(page, parents):
@@ -139,11 +152,11 @@ class Page(models.Model):
 
         return get_parent(self, [])[1][::-1]
 
-    def get_descendants(self, condition=None):
+    def get_descendants(self, language=None, conditions=None):
+        """TODO check if conditions descend correctly in recrusion"""
+
         def get_childern(page, descendants):
-            if condition:
-                return
-            children = page.children.all()
+            children = page.children.filter(state__exact=2).order_by('-weight', 'menu_title')
             if children:
                 kids = []
                 for child in children:
@@ -151,9 +164,9 @@ class Page(models.Model):
                 return [page, kids]
             else:
                 return [page, []]
-        ch = get_childern(self, [])[1][::-1]
-        # import ipdb; ipdb.set_trace()
-        return ch
+
+        descendants = get_childern(self, [])
+        return descendants[1]
 
     def get_siblings(self):
         qs = self.__class__._default_manager.using(self._state.db).filter(
@@ -165,10 +178,7 @@ class Page(models.Model):
 
     def is_root(self):
         """Return ``True`` if the page is the root page."""
-        if self.parent:
-            return False
-        else:
-            return True
+        return not self.parent
 
     def get_translations(self):
         translations = []

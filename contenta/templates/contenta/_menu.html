@@ -1,0 +1,13 @@
+
+<li>
+	<a href="{{node.0.url}}" {% if node.0.url == page.url %} class="active" {% endif %}>{{node.0.title}}</a>
+    {%if node.1 %}
+    <ul>
+    {%for subnode in node.1 %}
+        {%with node=subnode template_name="contenta/_menu.html" %}
+            {%include template_name%}
+        {%endwith%}
+    {%endfor%}
+    </ul>
+    {%endif%}
+</li>
