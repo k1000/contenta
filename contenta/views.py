@@ -35,7 +35,7 @@ def page(request, url):
         return HttpResponseRedirect("%s/" % request.path)
     if not url.startswith('/'):
         url = "/" + url
-    f = get_object_or_404(Page, url__exact=url, state__exact=2)
+    f = get_object_or_404(Page, url__exact=url, state__in=[2, 4])
     # If registration is required for accessing this page, and the user isn't
     # logged in, redirect to the login page.
     if f.registration_required and not request.user.is_authenticated():

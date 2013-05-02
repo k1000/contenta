@@ -35,6 +35,7 @@ class Page(models.Model):
         (1, _("darft")),
         (2, _("published")),
         (3, _("hidden")),
+        (4, _("hidden from menu")),
     )
 
     serv = services  # necessary for admin
@@ -153,7 +154,7 @@ class Page(models.Model):
         return get_parent(self, [])[1][::-1]
 
     def get_descendants(self, language=None, conditions=None):
-        """TODO check if conditions descend correctly in recrusion"""
+        """"""
 
         def get_childern(page, descendants):
             children = page.children.filter(state__exact=2).order_by('-weight', 'menu_title')
