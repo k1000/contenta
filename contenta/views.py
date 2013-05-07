@@ -44,6 +44,7 @@ def page(request, url):
 
     lang = f.language
     translation.activate(lang)
+    request.session['django_language'] = lang
 
     cur_vars = f.variables
     if cur_vars:
