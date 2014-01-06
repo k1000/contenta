@@ -17,3 +17,6 @@ DEFAULT_TEMPLATE = getattr(settings,
 
 FILEBROWSER_URL = getattr(settings, "CONTENTA_FILEBROWSER_URL",
 		"filebrowser/js/FB_CKEditor.js")
+		
+		
+SITE_MODEL = getattr(settings, "SITE_MODEL", 'contrib.sites.Site')
