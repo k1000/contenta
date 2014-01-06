@@ -11,9 +11,6 @@ from services import services
 from settings import *
 from manager import PageManager
 
-if MULTISITE:
-    from django.contrib.sites.models import Site
-
 
 class Page(models.Model):
     """Page model"""
@@ -107,7 +104,7 @@ class Page(models.Model):
         help_text=HELP_TXT_YAML)
 
     if MULTISITE:
-        sites = models.ManyToManyField(Site)
+        sites = models.ManyToManyField(SITE_MODEL)
 
     class Meta:
         verbose_name = _('Page')
