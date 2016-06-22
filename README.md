@@ -64,7 +64,7 @@ Optionally in settings.py set:
 * CONTENTA_EVALUATE_CONTENT = True
 
 Usage
-------
+-----
 Info about usage in https://github.com/k1000/contenta/wiki/Contenta-Usage
 
 Accepted variables for page template.
@@ -112,6 +112,22 @@ services.register("service name",
     "default": """default_var1: xxx
 default_var2: 2"""})
 ```
+
+Installed Services
+------------------
+
+* enviroment
+  takes parameters and injects them to the template
+  
+* extra
+  takes parameters and injects them to the template as 'extra'
+  
+* redirect
+  expects 'url' parameter
+  
+* get_pages
+  returns pages based on 'filter' parameter 
+
 TODO
 ----
 
